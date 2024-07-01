@@ -4,20 +4,28 @@
 
 
 ul{
-    background-color: aquamarine;
     margin: 10px;
+    padding: 0px;
 }
 
 li{
-    background-color: aqua;
+    display: flex;
     border-radius: 10px;
-    height: 2rem;
-    text-align: center;
+    height: 3rem;
     list-style: none;
-    padding-top: 10px;
+    align-items: center;
 }
 
 li:hover{
-    background-color: red;
+    background: rgba(243, 244, 247, 0.233);
 }
 
+
+img{
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    margin: 5px;
+}

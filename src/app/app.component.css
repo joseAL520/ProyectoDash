@@ -7,7 +7,6 @@
 }
 
 .conteinerOne{
-    background-color: rgb(49, 49, 224);
     flex: 1;
     padding-right: 15px;
     padding-left: 15px;
@@ -15,9 +14,8 @@
 }
 
 .conteinerTwo{
-    background-color: gray;
-    width: 15%;
-    padding-right: 15px;
+    background-color: rgb(33, 38, 49);
+    width: 20%;
     padding-left: 15px;
     box-sizing: border-box;
 }
