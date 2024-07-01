@@ -1,0 +1,23 @@
+.container{
+    height: 41rem;
+}
+
+
+ul{
+    background-color: aquamarine;
+    margin: 10px;
+}
+
+li{
+    background-color: aqua;
+    border-radius: 10px;
+    height: 2rem;
+    text-align: center;
+    list-style: none;
+    padding-top: 10px;
+}
+
+li:hover{
+    background-color: red;
+}
+

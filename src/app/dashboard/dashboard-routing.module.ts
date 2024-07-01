@@ -9,9 +9,9 @@ const routes: Routes = [
 {
   path:'',
   children:[
-    {path:'add-product',title:'Agregar Produtos',component: AddProductPageComponent},
-    {path:'add-User',title:'Agregar Usuarios',component: AddUserPageComponent},
-    {path:'dashboard',title:'dashboard',component: DashboardPageComponent},
+    {path:'add-product',component: AddProductPageComponent},
+    {path:'add-User',component: AddUserPageComponent},
+    {path:'dashboard',component: DashboardPageComponent},
     {path:'**',redirectTo:'dashboard'}
   ]
 },
