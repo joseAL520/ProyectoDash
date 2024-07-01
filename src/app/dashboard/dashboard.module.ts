@@ -8,6 +8,7 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
 import { AddUserPageComponent } from './pages/add-user-page/add-user-page.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { UserConteinerComponent } from './shared/user-conteiner/user-conteiner.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     DashboardPageComponent,
     AddUserPageComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    UserConteinerComponent
   ],
   imports: [
     CommonModule,
@@ -24,6 +26,7 @@ import { FooterComponent } from './shared/footer/footer.component';
   ],
   exports:[
     MenuComponent,
+    UserConteinerComponent
   ]
 })
 export class DashboardModule { }

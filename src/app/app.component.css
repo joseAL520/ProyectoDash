@@ -7,10 +7,13 @@
 }
 
 .conteinerOne{
+    color: #000;
     flex: 1;
-    padding-right: 15px;
-    padding-left: 15px;
     width: 10%;
+}
+
+.conteinerOutle{
+    margin: 10px;
 }
 
 .conteinerTwo{
