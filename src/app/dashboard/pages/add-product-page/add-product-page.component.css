@@ -1,0 +1,97 @@
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.containr-form{
+    width: 45%;
+    background-color: #212631;
+    padding: 30px;
+    margin: 10px;
+    border-radius: 5px;
+    color: black;
+}
+
+.containr-form span {
+    font-size: 22px;
+    margin: 20px;
+    color: white;
+    
+}
+
+.control{
+    width: 86%;
+    background: #6b778549;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px ;
+    border: 1px solid #6b778549; 
+    color: white;
+    margin: 15px;
+}
+
+.control-provedor{
+    width: 40%;
+}
+.control-categoria{
+    width: 40%;
+}
+.control-cantidad{
+    width: 20%;
+}
+
+.containr-form button {
+    width: 50%;
+    background: #3399ff;
+    border: none;
+    padding: 12px;
+    color: rgb(255, 255, 255);
+    margin: 16px 0;
+    font-size: 16px;
+    border-radius: 5px;
+
+}
+ 
+.container-table{
+    background-color: #ffffff;
+    border-radius: 5px;
+} 
+
+table{
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+th, td{
+    padding: 7px;
+}
+
+thead{
+    background-color: #212631;
+    color: white;
+    border-bottom: solid 5px #6b778549;
+}
+
+tr:nth-child(even){
+    background-color: #ddd;
+}
+
+
+.container-btn{
+    display: flex;
+    justify-content: center;
+
+}
+
+.control-btn{
+    margin: 10px;
+    border-radius: 5px;
+    background: #3399ff;
+    color: white;
+    border: 1px solid #3399ff;
+    padding: 7px;
+}
