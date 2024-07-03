@@ -14,11 +14,18 @@
     color: black;
 }
 
-.containr-form span {
+span {
     font-size: 22px;
     margin: 20px;
     color: white;
     
+}
+
+.text-validator{
+    font-size: 12px;
+    color: rgba(255, 0, 0, 0.603);
+    padding: 0px;
+    margin-left: 15px;
 }
 
 .control{
@@ -26,20 +33,21 @@
     background: #6b778549;
     padding: 10px;
     border-radius: 5px;
-    margin-bottom: 10px ;
-    border: 1px solid #6b778549; 
+    margin-bottom: 10px;
+    border: 1px solid #6b778549;
     color: white;
-    margin: 15px;
+    margin: 15px 15px 5px 15px;
 }
 
 
 .containr-form button {
+    display: flex;
     width: 50%;
     background: #3399ff;
     border: none;
     padding: 12px;
     color: rgb(255, 255, 255);
-    margin: 16px 0;
+    margin: 26px;
     font-size: 16px;
     border-radius: 5px;
 

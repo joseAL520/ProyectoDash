@@ -9,6 +9,9 @@ import { AddUserPageComponent } from './pages/add-user-page/add-user-page.compon
 import { MenuComponent } from './shared/menu/menu.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { UserConteinerComponent } from './shared/user-conteiner/user-conteiner.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ListUserComponent } from './pages/add-user-page/list-user/list-user.component';
+import { FormUserComponent } from './pages/add-user-page/form-user/form-user.component';
 
 
 @NgModule({
@@ -18,11 +21,14 @@ import { UserConteinerComponent } from './shared/user-conteiner/user-conteiner.c
     AddUserPageComponent,
     MenuComponent,
     FooterComponent,
-    UserConteinerComponent
+    UserConteinerComponent,
+    ListUserComponent,
+    FormUserComponent
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    ReactiveFormsModule
   ],
   exports:[
     MenuComponent,

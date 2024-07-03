@@ -2,13 +2,34 @@
 <div class="container">
     <div class="containr-form">
         <span> Formulario </span>
-        <form >
-            <input class="control control-id"     type="text"   placeholder="Numeo de identificacion" >
-            <input class="control control-nombre"    type="text"   placeholder="Nombres y apellidos" >
-            <input class="control control-direccion"  type="text"   placeholder="direccion" >
-            <input class="control control-correo" type="text"   placeholder="correo" >
-            <input class="control control-numb" type="number" placeholder="numero" >
-            <button >
+        <hr>
+        <form [formGroup]="myForm" (ngSubmit)="onSave()">
+            <input class="control control-id"           type="text"     formControlName="numero"       placeholder="Numeo de identificacion"          >
+            <span class="containr-form text-validator" *ngIf="isValidField('numero')">
+                {{ getFieldError('numero') }}
+            </span>
+
+            <input class="control control-nombre"       type="text"     formControlName="nombre"        placeholder="Nombres y apellidos"          >
+            <span class="containr-form text-validator" *ngIf="isValidField('nombre')">
+                {{ getFieldError('nombre') }}
+            </span>
+
+            <input class="control control-direccion"    type="text"     formControlName="direccion"        placeholder="direccion"        >
+            <span class="containr-form text-validator" *ngIf="isValidField('direccion')">
+                {{ getFieldError('direccion') }}
+            </span>
+
+            <input class="control control-correo"       type="text"     formControlName="correo"        placeholder="correo"       >
+            <span class="containr-form text-validator" *ngIf="isValidField('correo')">
+                {{ getFieldError('correo') }}
+            </span>
+
+            <input class="control control-numb"         type="text"   formControlName="numer"        placeholder="numero"       >
+            <span class="containr-form text-validator"  *ngIf="isValidField('numer')">
+                {{ getFieldError('numer') }}
+            </span>
+
+            <button type="submit">
                 Agregar Producto
             </button>
         </form>
