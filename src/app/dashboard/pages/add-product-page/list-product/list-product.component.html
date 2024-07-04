@@ -1,0 +1,49 @@
+<table >
+    <thead>
+        <tr>
+            <th class="control-table control-table-number" >#</th>
+            <th class="control-table control-table-nombre " >Nombre</th>
+            <th class="control-table control-table-marca" >Marca</th>
+            <th class="control-table control-table-provedor" >Provedor</th>
+            <th class="control-table control-table-categoria" >Categoria</th>
+            <th class="control-table control-table-cantidad" >Cantidad</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tr *ngFor="let product of productList.slice(currentIndex,currentIndex + pageSize); let i = index" >
+        <td>{{ currentIndex  + i + 1 }}</td>
+        <td>{{ product.nombre }}</td>
+        <td>{{ product.marca }}</td>
+        <td>{{ product.provedor }}</td>
+        <td>{{ product.categoria }}</td>
+        <td>{{ product.cantidad }}</td>
+        <td>
+            <button 
+                class="btn-danger"
+                (click)="onDeleterUser(product.id!)"
+            > X </button>
+        </td>    
+    </tr>
+
+</table> 
+    <hr>
+
+<div class="container-btn">
+        
+    <button 
+        class="control-btn"
+        (click)="previous()"
+        [disabled]="currentIndex === 0"
+    >
+        <- 
+    </button>
+
+    <button 
+        class="control-btn"
+        (click)="next()"
+        [disabled]="currentIndex + pageSize >= productList.length"
+    >
+        -> 
+    </button>
+</div>

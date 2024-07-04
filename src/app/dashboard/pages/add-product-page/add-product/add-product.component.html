@@ -1,0 +1,52 @@
+<span> Formulario </span>
+<hr>
+<form [formGroup]="myForm" (ngSubmit)="onSave()">
+    <input 
+        class="control control-nombre" type="text" 
+        placeholder="Nombre del Producto"
+        formControlName="nombre" 
+    >
+    <span class="containr-form text-validator" *ngIf="isValidField('nombre')">
+        {{ getFieldError('nombre') }}
+    </span>
+
+    <input 
+        class="control control-marca" type="text" 
+        placeholder="Marca del producto" 
+        formControlName="marca" 
+    >
+    <span class="containr-form text-validator" *ngIf="isValidField('marca')">
+        {{ getFieldError('marca') }}
+    </span>
+
+    <input 
+        class="control control-provedor" type="text" 
+        placeholder="Provedor" 
+        formControlName="provedor" 
+    >
+    <span class="containr-form text-validator" *ngIf="isValidField('provedor')">
+        {{ getFieldError('provedor') }}
+    </span>
+
+    <input 
+        class="control control-categoria" type="text" 
+        placeholder="Categoria"
+        formControlName="categoria" 
+    >
+    <span class="containr-form text-validator" *ngIf="isValidField('categoria')">
+        {{ getFieldError('categoria') }}
+    </span>
+
+    <input 
+        class="control control-cantidad " type="number" 
+        placeholder="cantidad" 
+        formControlName="cantidad"
+    >
+    <span class="containr-form text-validator" *ngIf="isValidField('cantidad')">
+        {{ getFieldError('cantidad') }}
+    </span>
+
+    <button >
+        Agregar Producto
+    </button>
+</form>

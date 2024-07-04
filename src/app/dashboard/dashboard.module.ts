@@ -12,6 +12,8 @@ import { UserConteinerComponent } from './shared/user-conteiner/user-conteiner.c
 import { ReactiveFormsModule } from '@angular/forms';
 import { ListUserComponent } from './pages/add-user-page/list-user/list-user.component';
 import { FormUserComponent } from './pages/add-user-page/form-user/form-user.component';
+import { ListProductComponent } from './pages/add-product-page/list-product/list-product.component';
+import { AddProductComponent } from './pages/add-product-page/add-product/add-product.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { FormUserComponent } from './pages/add-user-page/form-user/form-user.com
     FooterComponent,
     UserConteinerComponent,
     ListUserComponent,
-    FormUserComponent
+    FormUserComponent,
+    ListProductComponent,
+    AddProductComponent
   ],
   imports: [
     CommonModule,

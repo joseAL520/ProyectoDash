@@ -1,0 +1,51 @@
+table{
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+  }
+  
+th, td{
+    padding: 7px;
+}
+  
+thead{
+    background-color: #212631;
+    color: white;
+    border-bottom: solid 5px #6b778549;
+}
+
+tr:nth-child(even){
+    background-color: #ddd;
+}
+  
+  
+.container-btn{
+    display: flex;
+    justify-content: space-around;
+}
+  
+.control-btn{
+    margin: 5px;
+    border-radius: 5px;
+    background: #3399ff;
+    color: white;
+    border: 1px solid #3399ff;
+    padding: 7px;
+}
+
+.control-btn:hover {
+    background: #1b5188;
+    border: 0px;
+}
+
+
+.btn-danger{
+    background-color: #e55353;
+    border: 0px;
+    border-radius: 3px;
+}
+
+.btn-danger:hover {
+    background-color: #772c2c;
+}
