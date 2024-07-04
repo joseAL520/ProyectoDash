@@ -34,8 +34,18 @@ tr:nth-child(even){
     padding: 7px;
 }
 
+.control-btn:hover {
+    background: #1b5188;
+    border: 0px;
+}
+
+
 .btn-danger{
     background-color: #e55353;
     border: 0px;
     border-radius: 3px;
+}
+
+.btn-danger:hover {
+    background-color: #772c2c;
 }

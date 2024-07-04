@@ -7,6 +7,7 @@
 
 .containr-form{
     width: 45%;
+    height: 20%;
     background-color: #212631;
     padding: 20px;
     margin: 10px;
@@ -14,9 +15,12 @@
     color: black;
 }
 
-
  
 .container-table{
-    background-color: #ffffff;
     border-radius: 5px;
 } 
+
+.container-table span{
+    font-size: 20px;
+}
+

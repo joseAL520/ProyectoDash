@@ -26,6 +26,7 @@ span {
 
 button {
     display: flex;
+    justify-content: center;
     width: 50%;
     background: #3399ff;
     border: none;
@@ -35,4 +36,8 @@ button {
     font-size: 16px;
     border-radius: 5px;
 
+}
+
+button:hover {
+    background: #1b5188;
 }

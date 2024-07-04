@@ -5,9 +5,17 @@
     </div>
 
     <div class="container-table">
-        <list-user  
-            [personList]="userList" 
-            (oneDelete)="ondeleteUser($event)"
-        ></list-user>
+        @if ( userList.length) {
+            <list-user  
+                [personList]="userList" 
+                (oneDelete)="ondeleteUser($event)"
+            ></list-user>
+        } @else {
+            <span>
+                no hay usuarios en la tabla
+            </span>
+                
+        }
+       
     </div>
 </div>
