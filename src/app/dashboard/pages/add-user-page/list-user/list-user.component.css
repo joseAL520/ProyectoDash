@@ -14,7 +14,7 @@ thead{
     color: white;
     border-bottom: solid 5px #6b778549;
 }
-  
+
 tr:nth-child(even){
     background-color: #ddd;
 }
@@ -32,4 +32,10 @@ tr:nth-child(even){
     color: white;
     border: 1px solid #3399ff;
     padding: 7px;
+}
+
+.btn-danger{
+    background-color: #e55353;
+    border: 0px;
+    border-radius: 3px;
 }

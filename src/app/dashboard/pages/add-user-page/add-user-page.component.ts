@@ -22,4 +22,8 @@ export class AddUserPageComponent {
     this.serviceUse.addUser(character);
   }
 
+  ondeleteUser(id:string):void{
+    this.serviceUse.deleteUser(id);
+  }
+
 }

@@ -6,6 +6,9 @@
             <th class="control-table control-table-marca" >dirreccion</th>
             <th class="control-table control-table-provedor" >correo</th>
             <th class="control-table control-table-categoria" >numero</th>
+            <th>
+                
+            </th>
         </tr>
     </thead>
 
@@ -15,6 +18,12 @@
         <td>{{ person.direccion }}</td>
         <td> {{ person.correo }} </td>
         <td> {{ person.numer }}</td>
+        <td>
+            <button 
+                class="btn-danger"
+                (click)="onDeleterUser(person.numero!)"
+            > X </button>
+        </td>    
     </tr>
   
    </table> 

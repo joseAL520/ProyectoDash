@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { User } from '../../../interfaces/user.interfaces';
 
 @Component({
@@ -11,6 +11,8 @@ export class ListUserComponent {
  @Input()
  public personList: User[] = [];
 
+ @Output()
+ public oneDelete: EventEmitter<string> = new EventEmitter();
 
  public currentIndex = 0;
  public pageSize = 10;
@@ -27,5 +29,11 @@ export class ListUserComponent {
     }
     this.personList;
   }
+
+
+  onDeleterUser(id:string){
+    this.oneDelete.emit(id);
+  }
+
 
 }

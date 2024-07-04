@@ -5,6 +5,9 @@
     </div>
 
     <div class="container-table">
-        <list-user [personList]="userList" ></list-user>
+        <list-user  
+            [personList]="userList" 
+            (oneDelete)="ondeleteUser($event)"
+        ></list-user>
     </div>
 </div>
