@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UserServicesService } from '../../services/user.service';
+import { User } from '../../interfaces/user.interfaces';
 
 @Component({
   selector: 'app-add-user-page',
@@ -7,5 +9,17 @@ import { Component } from '@angular/core';
 })
 export class AddUserPageComponent {
 
+  constructor(
+    private serviceUse: UserServicesService
+  ){}
+
+
+  get userList(){
+     return this.serviceUse.userList;
+  }
+
+  aggUser(character: User){
+    this.serviceUse.addUser(character);
+  }
 
 }

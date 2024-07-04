@@ -1,10 +1,10 @@
 
 <div class="container">
     <div class="containr-form">
-        <form-user></form-user>
+        <form-user (addUserFomr)="aggUser($event)" ></form-user>
     </div>
 
     <div class="container-table">
-        <list-user></list-user>
+        <list-user [personList]="userList" ></list-user>
     </div>
 </div>

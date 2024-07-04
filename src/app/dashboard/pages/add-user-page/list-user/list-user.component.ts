@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { User } from '../../../interfaces/user.interfaces';
 
 @Component({
   selector: 'list-user',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './list-user.component.css'
 })
 export class ListUserComponent {
+
+ @Input()
+ public personList: User[] = [];
 
 }

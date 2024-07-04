@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { User } from '../../../interfaces/user.interfaces';
 
 @Component({
   selector: 'form-user',
@@ -7,6 +8,9 @@ import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrl: './form-user.component.css'
 })
 export class FormUserComponent {
+
+  @Output()
+  public addUserFomr: EventEmitter<User> = new EventEmitter();
 
   public myForm:FormGroup = this.fb.group({
     numero:['',[Validators.required,  Validators.minLength(10)]],
@@ -48,6 +52,7 @@ export class FormUserComponent {
 
   onSave(): void{
     if(this.myForm.valid){
+      this.addUserFomr.emit( this.myForm.value);
       this.myForm.reset()
       console.log('guardado exitosamente');
       return
