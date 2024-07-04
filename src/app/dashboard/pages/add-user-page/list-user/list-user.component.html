@@ -9,9 +9,9 @@
         </tr>
     </thead>
 
-    <tr *ngFor="let person of personList; let i=index">
-        <td>{{ i + 1 }}</td>
-        <td> {{ person.nombre }} </td>
+    <tr *ngFor="let person of personList.slice(currentIndex,currentIndex + pageSize); let i=index">
+        <td>{{ currentIndex +  i + 1 }}</td>
+        <td> {{ person.nombre | uppercase }} </td>
         <td>{{ person.direccion }}</td>
         <td> {{ person.correo }} </td>
         <td> {{ person.numer }}</td>
@@ -20,6 +20,20 @@
    </table> 
     <hr>
    <div class="container-btn">
-        <button class="control-btn"> <- </button>
-        <button class="control-btn"> -> </button>
+        
+        <button 
+            class="control-btn"
+            (click)="previous()"
+            [disabled]="currentIndex === 0"
+        >
+            <- 
+        </button>
+
+        <button 
+            class="control-btn"
+            (click)="next()"
+            [disabled]="currentIndex + pageSize >= personList.length"
+        >
+            -> 
+        </button>
    </div>

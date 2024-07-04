@@ -22,11 +22,11 @@ tr:nth-child(even){
   
 .container-btn{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
   
 .control-btn{
-    margin: 10px;
+    margin: 5px;
     border-radius: 5px;
     background: #3399ff;
     color: white;
