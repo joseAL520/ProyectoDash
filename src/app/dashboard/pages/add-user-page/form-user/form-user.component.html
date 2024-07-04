@@ -1,4 +1,4 @@
-<span> Formulario </span>
+<span> Formulario  de Usuario </span>
         <hr>
         <form [formGroup]="myForm" (ngSubmit)="onSave()">
             <input class="control control-id"           type="text"     formControlName="numero"       placeholder="Numeo de identificacion"          >
@@ -10,7 +10,7 @@
             <span class="containr-form text-validator" *ngIf="isValidField('nombre')">
                 {{ getFieldError('nombre') }}
             </span>
-
+                 
             <input class="control control-direccion"    type="text"     formControlName="direccion"        placeholder="direccion"        >
             <span class="containr-form text-validator" *ngIf="isValidField('direccion')">
                 {{ getFieldError('direccion') }}
