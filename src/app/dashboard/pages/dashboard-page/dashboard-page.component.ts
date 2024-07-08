@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class DashboardPageComponent {
 
+  public titulo:string = 'Panel de control'
+
+
 }

@@ -9,6 +9,7 @@ import { ProductServicesService } from '../../services/produc.service';
 })
 export class AddProductPageComponent {
 
+  public titulo:string = 'agregar Producto';
 
   constructor(
     private serviceProduct: ProductServicesService

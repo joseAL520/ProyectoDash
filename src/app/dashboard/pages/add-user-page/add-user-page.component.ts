@@ -9,6 +9,8 @@ import { User } from '../../interfaces/user.interfaces';
 })
 export class AddUserPageComponent {
 
+  public titulo:string = 'Agregar Usuario'
+
   constructor(
     private serviceUse: UserServicesService
   ){}
