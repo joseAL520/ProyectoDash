@@ -14,6 +14,7 @@ import { ListUserComponent } from './pages/add-user-page/list-user/list-user.com
 import { FormUserComponent } from './pages/add-user-page/form-user/form-user.component';
 import { ListProductComponent } from './pages/add-product-page/list-product/list-product.component';
 import { AddProductComponent } from './pages/add-product-page/add-product/add-product.component';
+import { LineGraficComponent } from './components/line-grafic/line-grafic.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { AddProductComponent } from './pages/add-product-page/add-product/add-pr
     ListUserComponent,
     FormUserComponent,
     ListProductComponent,
-    AddProductComponent
+    AddProductComponent,
+    LineGraficComponent
   ],
   imports: [
     CommonModule,
