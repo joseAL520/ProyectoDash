@@ -39,19 +39,33 @@
         <div class="container-grafic">
 
             <div class="text-container">
-                <h2>
-                    <strong>Trafic</strong>
-                </h2>
-                <h6>
-                    Date: 12/12/2024
-                </h6>
+              
+                @for (item of menuDash; track $index) {
+
+                    <button 
+                        class="btn-dash"
+                        (click)=" diagramType(  item.type ) " >
+                         {{ item.title }}
+                    </button>
+                }
+                <hr>
+                <div class="grafic-container">
+                    @switch (itemMenu) {
+                        @case ('line') {
+                            <app-line-grafic></app-line-grafic>
+                        }
+                        @case ('pie') {
+                            <app-pie-grafic></app-pie-grafic>
+                        }
+                    }
+                  
+                </div>
+    
+
             </div>
 
-            <div class="grafic-container">
-                    <!--  grafica   -->
-                    <app-line-grafic></app-line-grafic>
-            </div>
-
+            
+            
         </div>
     </div>
 

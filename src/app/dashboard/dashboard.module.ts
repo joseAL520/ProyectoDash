@@ -15,6 +15,7 @@ import { FormUserComponent } from './pages/add-user-page/form-user/form-user.com
 import { ListProductComponent } from './pages/add-product-page/list-product/list-product.component';
 import { AddProductComponent } from './pages/add-product-page/add-product/add-product.component';
 import { LineGraficComponent } from './components/line-grafic/line-grafic.component';
+import { PieGraficComponent } from './components/pie-grafic/pie-grafic/pie-grafic.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { LineGraficComponent } from './components/line-grafic/line-grafic.compon
     FormUserComponent,
     ListProductComponent,
     AddProductComponent,
-    LineGraficComponent
+    LineGraficComponent,
+    PieGraficComponent
   ],
   imports: [
     CommonModule,

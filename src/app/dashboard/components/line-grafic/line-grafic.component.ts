@@ -13,6 +13,7 @@ export class LineGraficComponent implements OnInit {
   chart: any
   public months: string[] = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
   
+  
   ngOnInit(): void {
     
     this.chart = new Chart('MyChart', {
@@ -27,17 +28,10 @@ export class LineGraficComponent implements OnInit {
           borderColor: 'rgb(75, 192, 192)',
           tension: 0.1
         },
-        {
-          label: 'My First Dataset',
-          data: [1,2, 3,4, 5, 6, 7,8,9,10,11,12],
-          fill: false,
-          borderColor: 'red',
-          tension: 0.2
-        },
-      
       ]
+    }});
   }
-    });
 
-  }
+
+
 }

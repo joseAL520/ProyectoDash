@@ -38,16 +38,25 @@
     padding: 10px;
     border: solid 1px rgba(128, 128, 128, 0.281);
     border-radius: 5px;
+    width: auto;
+    height: 550px;
+
 }
 
-
-.text-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 h6{
     color: gray;
 }
 
+.btn-dash{
+    background: #3399ff;
+    border: none;
+    padding: 12px;
+    color: rgb(255, 255, 255);
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+.btn-dash:hover {
+    background: #1b5188;
+}
