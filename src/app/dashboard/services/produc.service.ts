@@ -173,8 +173,7 @@ export class ProductServicesService {
 
   
   addProduct( character:  Productos ):void {
-    const newProduc:  Productos = {id: uuidv4() ,...character}
-    console.log(newProduc)
+    const newProduc:  Productos = {id: uuidv4() , fechaCreation: new Date() ,...character}
     this.producList.push(newProduc);
   }
 

@@ -7,5 +7,6 @@ export interface Productos {
     provedor:string,
     categoria:string,
     cantidad: number,
+    fechaCreation?:Date 
 }
 

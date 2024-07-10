@@ -5,4 +5,5 @@ export interface User  {
     direccion:string
     correo:string
     numer:string
+    fechaCreation?:Date 
 }

@@ -54,12 +54,8 @@ export class AddProductComponent {
     if(this.myForm.valid){
       this.addProductFomr.emit( this.myForm.value);
       this.myForm.reset()
-      console.log('guardado exitosamente');
       return
     }
-    console.log(this.myForm.value, this.myForm.valid);
-
-
   }
 
 

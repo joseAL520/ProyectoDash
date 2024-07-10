@@ -54,12 +54,8 @@ export class FormUserComponent {
     if(this.myForm.valid){
       this.addUserFomr.emit( this.myForm.value);
       this.myForm.reset()
-      console.log('guardado exitosamente');
       return
     }
-    console.log(this.myForm.value, this.myForm.valid);
-
-
   }
 
 
