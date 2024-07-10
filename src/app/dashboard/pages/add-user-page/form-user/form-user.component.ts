@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../../../interfaces/user.interfaces';
 
@@ -7,10 +7,19 @@ import { User } from '../../../interfaces/user.interfaces';
   templateUrl: './form-user.component.html',
   styleUrl: './form-user.component.css'
 })
-export class FormUserComponent {
+export class FormUserComponent implements OnChanges{
+
+  @Input()
+  public userByUp!: User;
 
   @Output()
   public addUserFomr: EventEmitter<User> = new EventEmitter();
+
+  @Output() 
+  public updateUserEvent: EventEmitter<User> = new EventEmitter()
+
+  public btnActiveEdit:boolean = false;
+  public btnAddUsr:boolean = false;
 
   public myForm:FormGroup = this.fb.group({
     numero:['',[Validators.required,  Validators.minLength(10)]],
@@ -46,7 +55,6 @@ export class FormUserComponent {
         
       }
     }
-
     return '';
   }
 
@@ -58,5 +66,23 @@ export class FormUserComponent {
     }
   }
 
+  onUpdate(): void {
+    if (this.myForm.valid && this.userByUp) {
+      this.updateUserEvent.emit(this.myForm.value);
+      this.myForm.reset();
 
+      this.btnActiveEdit = false;
+      this.btnAddUsr = false;
+      return
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['userByUp'] && changes['userByUp'].currentValue) {
+      this.myForm.patchValue(changes['userByUp'].currentValue);
+      
+      this.btnActiveEdit = true;
+      this.btnAddUsr = true;
+    }
+  }
 }

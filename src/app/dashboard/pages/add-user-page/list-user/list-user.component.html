@@ -1,3 +1,10 @@
+
+<div class="container">
+    
+    <form [formGroup]="myFom"  (keyup)="searchUser()"  >
+        <input type="text" class="search-user" placeholder="Buscar usuario por ID" formControlName="idBuscador">
+    </form>
+    
 <table >
     <thead>
         <tr>
@@ -6,9 +13,8 @@
             <th class="control-table control-table-marca" >dirreccion</th>
             <th class="control-table control-table-provedor" >correo</th>
             <th class="control-table control-table-categoria" >numero</th>
-            <th>
-                
-            </th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
 
@@ -23,7 +29,19 @@
                 class="btn-danger"
                 (click)="onDeleterUser(person.numero!)"
             > X </button>
-        </td>    
+        </td>  
+        <td>
+            <button 
+                class="btn-update" 
+                (click)="updateUserById( person )"
+            > 
+                <img 
+                    src="https://cdn-icons-png.flaticon.com/512/2830/2830022.png" 
+                    width="10px"
+                    height="10px"
+                    alt="icon">
+            </button>
+        </td>   
     </tr>
   
    </table> 
@@ -46,3 +64,4 @@
             -> 
         </button>
    </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { User } from '../../../interfaces/user.interfaces';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'list-user',
@@ -14,8 +15,20 @@ export class ListUserComponent {
  @Output()
  public oneDelete: EventEmitter<string> = new EventEmitter();
 
+ @Output()
+ public userUpdate: EventEmitter<User> = new EventEmitter();
+
+ @Output()
+ public searchUserId: EventEmitter<string> = new EventEmitter()
+
  public currentIndex = 0;
  public pageSize = 10;
+
+ public myFom: FormGroup = this.fb.group({idBuscador:['']})
+
+ constructor(
+    private fb: FormBuilder
+ ){}
 
   next(){
     this.currentIndex += this.pageSize;
@@ -30,10 +43,17 @@ export class ListUserComponent {
     this.personList;
   }
 
-
   onDeleterUser(id:string){
     this.oneDelete.emit(id);
   }
 
+  updateUserById( person:User ){
+    this.userUpdate.emit( person );
+  }
+
+  searchUser(){
+    const userId = this.myFom.value.idBuscador;
+    this.searchUserId.emit(userId);
+  }
 
 }

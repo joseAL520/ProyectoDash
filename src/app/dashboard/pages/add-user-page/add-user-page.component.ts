@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserServicesService } from '../../services/user.service';
 import { User } from '../../interfaces/user.interfaces';
 
@@ -10,6 +10,8 @@ import { User } from '../../interfaces/user.interfaces';
 export class AddUserPageComponent {
 
   public titulo:string = 'Agregar Usuario'
+  public userUpdate!: User
+
 
   constructor(
     private serviceUse: UserServicesService
@@ -26,6 +28,21 @@ export class AddUserPageComponent {
 
   ondeleteUser(id:string):void{
     this.serviceUse.deleteUser(id);
+  }
+
+
+  // User Update
+  byuserUpdateCharacter( character:User ){
+    return  this.userUpdate = character 
+  }
+
+  userNewUpdate( character:User ){
+    this.serviceUse.updateUser(character)
+  }
+
+  //Search User
+  searchUserByID(id:string){
+    this.serviceUse.searchUser(id);
   }
 
 }

@@ -24,7 +24,7 @@ span {
 }
 
 
-button {
+.btn-agg {
     display: flex;
     justify-content: center;
     width: 50%;
@@ -32,12 +32,33 @@ button {
     border: none;
     padding: 12px;
     color: rgb(255, 255, 255);
-    margin: 26px;
+    margin: 20px 6px 5px 20px;
     font-size: 16px;
     border-radius: 5px;
 
 }
 
-button:hover {
+.btn-agg:hover {
     background: #1b5188;
+}
+
+
+.contaner-btn{
+    display: flex;
+    justify-content: end;
+}
+
+.btn-Update{
+    background: #21f0b2;
+    width: 15%;
+    border: none;
+    padding: 12px;
+    color: rgb(255, 255, 255);
+    margin: -48px 6px 5px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.btn-Update:hover{
+    background: #12805f;
 }
