@@ -6,9 +6,20 @@
     </div>
 
     <div class="container-table">
-        <list-product
-            (oneDelete)="ondeleteUser($event)"
-            [productList]="producList"></list-product>
+        
+
+
+            @if (  producList.length) {
+                <list-product
+                (oneDelete)="ondeleteUser($event)"
+                [productList]="producList"></list-product>
+
+            } @else {
+                <span>
+                    no hay usuarios en la tabla
+                </span>
+                    
+            }
     </div>
 
 </div>

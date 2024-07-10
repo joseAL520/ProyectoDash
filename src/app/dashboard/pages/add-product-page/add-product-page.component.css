@@ -1,8 +1,9 @@
 
 .container{
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -19,4 +20,8 @@
     background-color: #ffffff;
     border-radius: 5px;
 } 
+
+.container-table span{
+    font-size: 20px;
+}
 
