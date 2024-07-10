@@ -2,17 +2,21 @@
 
 <div class="container">
     <div class="containr-form">
-        <add-product (addProductFomr)="aggProduct($event)" ></add-product>
+        <add-product 
+            (addProductFomr)="aggProduct($event)" 
+            (updateUserEvent)="productNewUpdate($event)"
+            [productByUp]="productUpdate"
+        ></add-product>
     </div>
 
     <div class="container-table">
-        
-
-
-            @if (  producList.length) {
+            @if (  producList ) {
                 <list-product
+                [productList]="producList"
                 (oneDelete)="ondeleteUser($event)"
-                [productList]="producList"></list-product>
+                (productUpdate)="byproductUpdateCharacter($event)"
+                (productProductName)="searchProductByname($event)"
+                ></list-product>
 
             } @else {
                 <span>

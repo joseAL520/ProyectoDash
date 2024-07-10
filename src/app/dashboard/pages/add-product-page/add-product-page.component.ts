@@ -10,7 +10,9 @@ import { ProductServicesService } from '../../services/produc.service';
 export class AddProductPageComponent {
 
   public titulo:string = 'agregar Producto';
+  public productUpdate!: Productos
 
+  
   constructor(
     private serviceProduct: ProductServicesService
   ){}
@@ -25,6 +27,21 @@ export class AddProductPageComponent {
 
   ondeleteUser(id:string):void{
     this.serviceProduct.deleteProduct(id);
+  }
+
+
+  // User Update
+  byproductUpdateCharacter( character:Productos ){
+    return  this.productUpdate = character 
+  }
+
+  productNewUpdate( character:Productos ){
+    this.serviceProduct.updateProduct(character);
+  }
+
+  //Search User
+  searchProductByname(name:string){
+    this.serviceProduct.searchProduct(name);
   }
 
 }

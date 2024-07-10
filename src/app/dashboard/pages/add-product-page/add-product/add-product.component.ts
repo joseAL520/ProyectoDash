@@ -1,18 +1,29 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Productos } from '../../../interfaces/produc.interfaces';
+import { v4 as uuidv4  } from 'uuid';
 
 @Component({
   selector: 'add-product',
   templateUrl: './add-product.component.html',
   styleUrl: './add-product.component.css'
 })
-export class AddProductComponent {
+export class AddProductComponent implements OnChanges {
+
+  @Input()
+  public productByUp!: Productos;
 
   @Output()
   public addProductFomr: EventEmitter<Productos> = new EventEmitter();
 
+  @Output() 
+  public updateUserEvent: EventEmitter<Productos> = new EventEmitter()
+
+  public btnActiveEdit:boolean = false;
+  public btnAdd:boolean = false;
+
   public myForm:FormGroup = this.fb.group({
+    id:[ uuidv4() ],
     nombre:['',[Validators.required, Validators.minLength(3)]],
     marca:['',[Validators.required, Validators.minLength(3) ]],
     provedor:['',[Validators.required, Validators.minLength(3)]],
@@ -55,6 +66,26 @@ export class AddProductComponent {
       this.addProductFomr.emit( this.myForm.value);
       this.myForm.reset()
       return
+    }
+  }
+
+
+  onUpdate(): void {
+    if (this.myForm.valid && this.productByUp) {
+      this.updateUserEvent.emit(this.myForm.value);
+      this.myForm.reset();
+      this.btnActiveEdit = false;
+      this.btnAdd = false;
+      return
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['productByUp'] && changes['productByUp'].currentValue) {
+      this.myForm.patchValue(changes['productByUp'].currentValue);
+      
+      this.btnActiveEdit = true;
+      this.btnAdd = true;
     }
   }
 

@@ -1,7 +1,7 @@
 
 
 export interface Productos {
-    id?:string,
+    id:string,
     nombre: string,
     marca:string,
     provedor:string,

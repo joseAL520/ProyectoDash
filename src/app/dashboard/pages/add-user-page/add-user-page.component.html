@@ -10,7 +10,7 @@
     </div>
 
     <div class="container-table">
-        @if ( userList.length) {
+        @if ( userList ) {
             <list-user  
                 [personList]="userList" 
                 (oneDelete)="ondeleteUser($event)"
