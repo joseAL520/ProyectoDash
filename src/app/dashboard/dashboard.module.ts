@@ -16,6 +16,7 @@ import { ListProductComponent } from './pages/add-product-page/list-product/list
 import { AddProductComponent } from './pages/add-product-page/add-product/add-product.component';
 import { LineGraficComponent } from './components/line-grafic/line-grafic.component';
 import { PieGraficComponent } from './components/pie-grafic/pie-grafic/pie-grafic.component';
+import { CardsComponent } from './components/cards/cards.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { PieGraficComponent } from './components/pie-grafic/pie-grafic/pie-grafi
     ListProductComponent,
     AddProductComponent,
     LineGraficComponent,
-    PieGraficComponent
+    PieGraficComponent,
+    CardsComponent
   ],
   imports: [
     CommonModule,
