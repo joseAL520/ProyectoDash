@@ -10,19 +10,12 @@
     </div>
 
     <div class="container-table">
-        @if ( userList ) {
             <list-user  
                 [personList]="userList" 
                 (oneDelete)="ondeleteUser($event)"
                 (userUpdate)="byuserUpdateCharacter($event)"
                 (searchUserId)="searchUserByID($event)"
             ></list-user>
-        } @else {
-            <span>
-                no hay usuarios en la tabla
-            </span>
-                
-        }
        
     </div>
 </div>

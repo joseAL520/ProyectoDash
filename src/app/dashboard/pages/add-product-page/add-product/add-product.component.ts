@@ -29,12 +29,12 @@ export class AddProductComponent implements OnChanges {
     provedor:['',[Validators.required, Validators.minLength(3)]],
     categoria:['',[Validators.required ,Validators.minLength(3)]],
     cantidad:[ ,[Validators.required, Validators.min(0)]],
+    fechaCreation:[ Date() ]
   })
 
   constructor(
     private fb: FormBuilder
   ){}
-
 
   isValidField( field:string, ){
     return this.myForm.controls[field].errors 

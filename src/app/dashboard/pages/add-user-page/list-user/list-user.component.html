@@ -23,11 +23,11 @@
         <td> {{ person.nombre | uppercase }} </td>
         <td>{{ person.direccion }}</td>
         <td> {{ person.correo }} </td>
-        <td> {{ person.numer }}</td>
+        <td> {{ person.numero }}</td>
         <td>
             <button 
                 class="btn-danger"
-                (click)="onDeleterUser(person.numero!)"
+                (click)="onDeleterUser(person.id)"
             > X </button>
         </td>  
         <td>

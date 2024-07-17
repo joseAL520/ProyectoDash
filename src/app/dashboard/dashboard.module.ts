@@ -17,6 +17,7 @@ import { AddProductComponent } from './pages/add-product-page/add-product/add-pr
 import { LineGraficComponent } from './components/line-grafic/line-grafic.component';
 import { PieGraficComponent } from './components/pie-grafic/pie-grafic/pie-grafic.component';
 import { CardsComponent } from './components/cards/cards.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { CardsComponent } from './components/cards/cards.component';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   exports:[
     MenuComponent,

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../../../interfaces/user.interfaces';
+import { v4 as uuidv4  } from 'uuid';
 
 @Component({
   selector: 'form-user',
@@ -22,11 +23,13 @@ export class FormUserComponent implements OnChanges{
   public btnAddUsr:boolean = false;
 
   public myForm:FormGroup = this.fb.group({
-    numero:['',[Validators.required,  Validators.minLength(10)]],
+    id: [uuidv4() ] ,
+    numeroId:['',[Validators.required,  Validators.minLength(10)]],
     nombre:['',[Validators.required,  Validators.minLength(3)]],
     direccion:['',[Validators.required]],
     correo:['',[Validators.required,  Validators.email]],
-    numer:['',[Validators.required,  Validators.minLength(10)]],
+    numero:[,[Validators.required,  Validators.minLength(10)]],
+    fechaCreation:[ Date() ]
   })
 
   constructor(
@@ -86,3 +89,5 @@ export class FormUserComponent implements OnChanges{
     }
   }
 }
+
+

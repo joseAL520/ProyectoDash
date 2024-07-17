@@ -1,9 +1,10 @@
 
 export interface User  {
-    numero: string
+    id:string
+    numeroId: string
     nombre:string
     direccion:string
     correo:string
-    numer:string
-    fechaCreation?:Date 
+    numero:string
+    fechaCreation:string
 }

@@ -7,27 +7,36 @@ import { User } from '../../interfaces/user.interfaces';
   templateUrl: './add-user-page.component.html',
   styleUrl: './add-user-page.component.css'
 })
-export class AddUserPageComponent {
+export class AddUserPageComponent implements OnInit {
 
   public titulo:string = 'Agregar Usuario'
   public userUpdate!: User
+  public userList: User[] = []
 
 
   constructor(
     private serviceUse: UserServicesService
   ){}
+ 
 
 
-  get userList(){
-     return this.serviceUse.userList;
+  getUserList(){
+     return this.serviceUse.getuserList()
+        .subscribe( (user) =>{
+           this.userList = Object.values(user)
+        } );
   }
 
   aggUser(character: User){
-    this.serviceUse.addUser(character);
+    this.serviceUse.addUser(character).subscribe( () => {
+      this.getUserList();
+    } );
   }
 
   ondeleteUser(id:string):void{
-    this.serviceUse.deleteUser(id);
+    this.serviceUse.deleteUser(id).subscribe( () => {
+        this.getUserList();
+    });
   }
 
 
@@ -37,12 +46,31 @@ export class AddUserPageComponent {
   }
 
   userNewUpdate( character:User ){
-    this.serviceUse.updateUser(character)
+    this.serviceUse.updateUser(character).subscribe( () => {
+        this.getUserList();
+    } )
   }
 
   //Search User
   searchUserByID(id:string){
-    this.serviceUse.searchUser(id);
+    if( id.trim() ){
+      this.serviceUse.searchUser(id)
+        .subscribe( user => { 
+           this.userList = Object.values(user)
+         } );
+      return
+    }else{
+       this.getUserList();
+    }
+
+    
+  }
+
+
+
+
+  ngOnInit(): void {
+    this.getUserList();
   }
 
 }

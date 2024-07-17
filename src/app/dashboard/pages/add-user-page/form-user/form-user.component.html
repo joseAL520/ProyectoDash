@@ -1,9 +1,9 @@
 <span> Formulario  de Usuario </span>
         <hr>
         <form [formGroup]="myForm" (ngSubmit)="onSave()">
-            <input class="control control-id"           type="text"     formControlName="numero"       placeholder="Numeo de identificacion"          >
-            <span class="containr-form text-validator" *ngIf="isValidField('numero')">
-                {{ getFieldError('numero') }}
+            <input class="control control-id"           type="text"     formControlName="numeroId"       placeholder="Numeo de identificacion"          >
+            <span class="containr-form text-validator" *ngIf="isValidField('numeroId')">
+                {{ getFieldError('numeroId') }}
             </span>
 
             <input class="control control-nombre"       type="text"     formControlName="nombre"        placeholder="Nombres y apellidos"          >
@@ -21,9 +21,9 @@
                 {{ getFieldError('correo') }}
             </span>
 
-            <input class="control control-numb"         type="number"   formControlName="numer"        placeholder="numero"       >
-            <span class="containr-form text-validator"  *ngIf="isValidField('numer')">
-                {{ getFieldError('numer') }}
+            <input class="control control-numb"         type="numero"   formControlName="numero"        placeholder="numero"       >
+            <span class="containr-form text-validator"  *ngIf="isValidField('numero')">
+                {{ getFieldError('numero') }}
             </span>
 
             <button type="submit" class="btn-agg" [disabled]=" btnAddUsr">

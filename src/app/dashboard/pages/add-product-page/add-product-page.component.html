@@ -10,20 +10,15 @@
     </div>
 
     <div class="container-table">
-            @if (  producList ) {
+           
                 <list-product
-                [productList]="producList"
+                [productList]="productList"
                 (oneDelete)="ondeleteUser($event)"
                 (productUpdate)="byproductUpdateCharacter($event)"
                 (productProductName)="searchProductByname($event)"
                 ></list-product>
-
-            } @else {
-                <span>
-                    no hay usuarios en la tabla
-                </span>
-                    
-            }
     </div>
 
 </div>
+
+<!--  -->

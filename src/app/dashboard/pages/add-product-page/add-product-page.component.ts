@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Productos } from '../../interfaces/produc.interfaces';
 import { ProductServicesService } from '../../services/produc.service';
 
@@ -7,26 +7,37 @@ import { ProductServicesService } from '../../services/produc.service';
   templateUrl: './add-product-page.component.html',
   styleUrl: './add-product-page.component.css'
 })
-export class AddProductPageComponent {
+export class AddProductPageComponent implements OnInit {
 
   public titulo:string = 'agregar Producto';
-  public productUpdate!: Productos
+  public productUpdate!: Productos;
+  public productList: Productos[] =[]
 
   
   constructor(
     private serviceProduct: ProductServicesService
   ){}
+ 
 
-  get producList(){
-     return this.serviceProduct.producList;
+  getproducList(){
+    return this.serviceProduct.getProductList()
+            .subscribe( product => 
+                this.productList = Object.values(product)
+            );
   }
 
   aggProduct(character: Productos){
-    this.serviceProduct.addProduct(character);
+    this.serviceProduct.addProduct(character).subscribe( (newProduct) => {
+      if(newProduct){
+        this.getproducList()
+      }
+    });
   }
 
   ondeleteUser(id:string):void{
-    this.serviceProduct.deleteProduct(id);
+    this.serviceProduct.deleteProduct(id).subscribe( () => {
+        this.getproducList()
+    } );
   }
 
 
@@ -36,12 +47,26 @@ export class AddProductPageComponent {
   }
 
   productNewUpdate( character:Productos ){
-    this.serviceProduct.updateProduct(character);
+    this.serviceProduct.updateProduct(character).subscribe( () => {
+        this.getproducList()
+    } );
   }
 
   //Search User
   searchProductByname(name:string){
-    this.serviceProduct.searchProduct(name);
+    if( name.trim() ){
+      this.serviceProduct.searchProduct(name)
+        .subscribe( product => {
+          this.productList = Object.values(product)
+        });
+      return
+    }else{
+      this.getproducList()
+    }
+  }
+
+  ngOnInit(): void {
+    this.getproducList()
   }
 
 }
