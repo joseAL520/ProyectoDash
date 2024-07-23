@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
+import { ProductServicesService } from '../../../services/produc.service';
+import { map, tap } from 'rxjs';
 
 Chart.register(...registerables);
 
@@ -12,8 +14,14 @@ export class PieGraficComponent implements OnInit {
   
 
   chartPie: any
-  public productCategory: string[] =[ "Electrónica","Ropa y accesorios","Alimentos y bebidas","Hogar y cocina","Juguetes y juegos"];
+  public productCategory: string[] =[  "Electrónica","Ropa","Alimentos","Hogar","Deportes","Salud"];
+  public data: number[] = [];
+  public label: string[] = [];
   
+  constructor(
+    private srvProduct: ProductServicesService
+  ){}
+
   coloGenerator(){
     const colores: any[] =[]
     this.productCategory.forEach( () => {
@@ -27,23 +35,65 @@ export class PieGraficComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
+
+  getProductValue(){
+      this.srvProduct.getProductList().pipe(
+        map( value => value.map(  product => ({
+          categoria: product.categoria,
+          cantidad: product.cantidad
+        }))),
+        tap( rel => this.updatePieDiagram(rel))
+      ).subscribe()
+  }
+
+
+  updatePieDiagram( data:{ cantidad:number , categoria:string }[] ){
+    
+    // Crear un objeto para agrupar las cantidades por categoria
+    const categoriTotals: { [key: string]: number } = {};
+    
+     data.forEach( item => {
+      if( categoriTotals[item.categoria] ){
+        categoriTotals[item.categoria] += item.cantidad;
+      }else{
+        categoriTotals[item.categoria] = item.cantidad;
+      }
+    });
+    
+
+    // filtrar y ordenar las categoria segun 
+    const filterCatego = this.productCategory.filter( categ => categoriTotals[categ] !== undefined);
+    const filterData =  filterCatego.map( categ => categoriTotals[categ]);
+    
+    this.label = filterCatego;
+    this.data = filterData;
+
+    this.createPiegrafic();
+
+  }
+
+  createPiegrafic(){
 
     this.chartPie = new Chart('MyChart', {
       type: 'pie',
       data: {
-        labels: this.productCategory,
+        labels: this.label,
         datasets: [
         {
           label:'cantidad',
-          data: [65, 59, 80, 81, 56],
+          data: this.data,
           backgroundColor: this.coloGenerator(),
 
         },
       ]
     }});
 
-     
+  }
+
+  ngOnInit(): void {
+
+    this.getProductValue();
 
   }
+
 }
