@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Productos } from '../../../interfaces/produc.interfaces';
+import { CategoriaProduct, CATEGORIAS, Productos } from '../../../interfaces/produc.interfaces';
 import { v4 as uuidv4  } from 'uuid';
 
 @Component({
@@ -8,7 +8,7 @@ import { v4 as uuidv4  } from 'uuid';
   templateUrl: './add-product.component.html',
   styleUrl: './add-product.component.css'
 })
-export class AddProductComponent implements OnChanges {
+export class AddProductComponent implements OnChanges{
 
   @Input()
   public productByUp!: Productos;
@@ -22,12 +22,15 @@ export class AddProductComponent implements OnChanges {
   public btnActiveEdit:boolean = false;
   public btnAdd:boolean = false;
 
+
+  categorias: CategoriaProduct[] = CATEGORIAS;
+
   public myForm:FormGroup = this.fb.group({
     id:[ uuidv4() ],
     nombre:['',[Validators.required, Validators.minLength(3)]],
     marca:['',[Validators.required, Validators.minLength(3) ]],
     provedor:['',[Validators.required, Validators.minLength(3)]],
-    categoria:['',[Validators.required ,Validators.minLength(3)]],
+    categoria:['',[Validators.required ]],
     cantidad:[ ,[Validators.required, Validators.min(0)]],
     fechaCreation:[ Date() ]
   })
