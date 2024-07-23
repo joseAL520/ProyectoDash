@@ -28,11 +28,17 @@
         {{ getFieldError('provedor') }}
     </span>
 
-    <input 
+    <!-- <input 
         class="control control-categoria" type="text" 
         placeholder="Categoria"
         formControlName="categoria" 
-    >
+    > -->
+    <select  class="control control-categoria"  formControlName="categoria"  >
+        <option value="">Seleccione la categoria</option>
+        <option *ngFor="let categoria of categorias" [value]="categoria.code">
+            {{ categoria.name }}
+        </option>
+      </select>
     <span class="containr-form text-validator" *ngIf="isValidField('categoria')">
         {{ getFieldError('categoria') }}
     </span>

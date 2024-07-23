@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Productos } from '../../interfaces/produc.interfaces';
 import { ProductServicesService } from '../../services/produc.service';
+import { map, tap } from 'rxjs';
+import { CodeProdut } from '../../interfaces/codes-interfaces/categoryProductsCode.interfaces';
 
 @Component({
   selector: 'app-add-product-page',
@@ -20,10 +22,16 @@ export class AddProductPageComponent implements OnInit {
  
 
   getproducList(){
-    return this.serviceProduct.getProductList()
-            .subscribe( product => 
-                this.productList = Object.values(product)
-            );
+    return this.serviceProduct.getProductList().pipe(
+      map( value => {
+        return value.map( (product:Productos) => ({
+            ...product,
+            nameProductCode: CodeProdut[product.categoria] 
+        })) 
+      }),
+      tap(rep => this.productList = rep)
+    ).subscribe()
+            
   }
 
   aggProduct(character: Productos){
