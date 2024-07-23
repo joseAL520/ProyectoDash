@@ -1,6 +1,6 @@
 
 export const CodeProdut:{[key:string] :string} = {
-   elc : "Electrónica",
+   el : "Electrónica",
    rp : "Ropa",
    al : "Alimentos",
    hg : "Hogar",

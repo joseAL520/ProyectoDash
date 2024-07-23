@@ -8,6 +8,7 @@ export interface Productos {
     categoria:string
     cantidad: number
     fechaCreation:string 
+    nameProductCode?:string
 }
 
 
@@ -17,7 +18,7 @@ export interface CategoriaProduct {
 }
 
 export const CATEGORIAS: CategoriaProduct[] = [
-    { code: 'elc', name: 'Electrónica' },
+    { code: 'el', name: 'Electrónica' },
     { code: 'rp', name: 'Ropa' },
     { code: 'al', name: 'Alimentos' },
     { code: 'hg', name: 'Hogar' },
