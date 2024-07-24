@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { ProductServicesService } from '../../../services/produc.service';
 import { map, tap } from 'rxjs';
+import { CodeProdut } from '../../../interfaces/codes-interfaces/categoryProductsCode.interfaces';
 
 Chart.register(...registerables);
 
@@ -14,7 +15,8 @@ export class PieGraficComponent implements OnInit {
   
 
   chartPie: any
-  public productCategory: string[] =[  "Electrónica","Ropa","Alimentos","Hogar","Deportes","Salud"];
+  public productCategory: string[] =[];
+  public values:string[]=[]
   public data: number[] = [];
   public label: string[] = [];
   
@@ -29,44 +31,56 @@ export class PieGraficComponent implements OnInit {
       let g = Math.floor(Math.random() * 128) + 127; // Rango: 127 a 255
       let b = Math.floor(Math.random() * 128) + 127; // Rango: 127 a 255 
       let color = `rgb(${r}, ${g}, ${b})`;
-      colores.push(color)
+      colores.push(color);
     });
     return colores
   }
 
 
-
   getProductValue(){
       this.srvProduct.getProductList().pipe(
         map( value => value.map(  product => ({
-          categoria: product.categoria,
+          categoria: this.categoryName(product.categoria),
           cantidad: product.cantidad
         }))),
         tap( rel => this.updatePieDiagram(rel))
       ).subscribe()
   }
 
+  // filtra el codigo y lo vuelve el nombre
+  categoryName(code:string){
+    const codigoName = CodeProdut[code];
+    this.unicValue(codigoName);
+    return codigoName;
+  }
+
+  // elimina los valores repetidos
+  unicValue(name:string){
+    this.values.push(name);
+    const valoresUnicos = [...new Set(this.values)];
+    return this.productCategory = valoresUnicos;
+  }
+
 
   updatePieDiagram( data:{ cantidad:number , categoria:string }[] ){
     
     // Crear un objeto para agrupar las cantidades por categoria
-    const categoriTotals: { [key: string]: number } = {};
-    
+    const CodeProdut$: { [key: string]: number } = {};
+
      data.forEach( item => {
-      if( categoriTotals[item.categoria] ){
-        categoriTotals[item.categoria] += item.cantidad;
+      if( CodeProdut$[item.categoria] ){
+        CodeProdut$[item.categoria] += item.cantidad;
       }else{
-        categoriTotals[item.categoria] = item.cantidad;
+        CodeProdut$[item.categoria] = item.cantidad;
       }
     });
-    
 
-    // filtrar y ordenar las categoria segun 
-    const filterCatego = this.productCategory.filter( categ => categoriTotals[categ] !== undefined);
-    const filterData =  filterCatego.map( categ => categoriTotals[categ]);
+    //filtrar y ordenar las categoria segun 
+    const filterCatego = this.productCategory.filter( categ => CodeProdut$[categ] !== undefined);
+    const filterData =  filterCatego.map( categ => CodeProdut$[categ]);
     
-    this.label = filterCatego;
-    this.data = filterData;
+    this.label = filterCatego
+    this.data = filterData
 
     this.createPiegrafic();
 
@@ -91,9 +105,7 @@ export class PieGraficComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.getProductValue();
-
   }
 
 }
