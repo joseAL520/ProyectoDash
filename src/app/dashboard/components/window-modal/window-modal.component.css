@@ -14,7 +14,8 @@
   
   .content-modal {
     width: 100%;
-    max-width: 400px;
+    
+    max-width: 560px;
     padding: 20px;
     background-color: white;
     border-radius: 4px;
@@ -24,13 +25,50 @@
   .content-modal h2 {
     margin-bottom: 15px;
   }
-  
-  .content-modal p {
-    padding: 15px 0;
-    border-top: 1px solid rgba(56, 56, 56, 0.87);
-    border-bottom: 1px solid rgba(56, 56, 56, 0.87);
+
+  .conten-info{
+    background-color: #5f5d5d8a;
+    padding: 10px;
+    border-radius: 5px;
   }
+
+  .conten-info div{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(50px, auto);
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+   
+  }
+
+ 
+.conten{
+  background-color:#f8f8f8c9;
+}
+
+ .conte2{
+    grid-column-start: span 2;
+    
+
+  }
+
+  .conte3{
+    grid-column-start: span 2;
   
+  }
+
+  .conte6{
+    grid-column-start: span 2;
+   
+  }
+
+  .conte10{
+    background-color: rgba(250, 235, 215, 0.548);
+  }  
+
+
   .content-modal .btn-cerrar {
     width: 100%;
     margin-top: 10px;
@@ -46,3 +84,7 @@
     cursor: pointer;
   }
   
+  .line{
+    border: 1px solid black;
+    margin-bottom: 20px;
+  }

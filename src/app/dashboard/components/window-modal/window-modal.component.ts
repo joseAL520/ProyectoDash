@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { InfoModal } from '../../interfaces/infoModal.interfaces';
 
 @Component({
   selector: 'app-window-modal',
@@ -8,6 +9,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class WindowModalComponent {
   @Output() 
   public closeModal: EventEmitter<void> = new EventEmitter();
+
+  @Input()
+  public infoForModal:InfoModal[]=[];
+
 
   close() {
     this.closeModal.emit();

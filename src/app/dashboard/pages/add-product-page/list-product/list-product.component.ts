@@ -25,7 +25,9 @@ export class ListProductComponent {
  public pageSize = 10;
  public myFom: FormGroup = this.fb.group({ nameBuscador:[''] })
  public isModalOpen = false;
- 
+
+ infoModal: any[] = [];
+
  constructor(
     private fb: FormBuilder
  ){}
@@ -58,7 +60,14 @@ export class ListProductComponent {
     this.productProductName.emit(userId);
   }
 
-  openModalInfo(productfo: Productos) {
+  openModalInfo<T>(productfo: T):void {
+    
+    if(this.infoModal.length > 0){
+        this.infoModal.pop()
+    }
+
+
+    this.infoModal.push(productfo)
     this.isModalOpen = true;
   }
 

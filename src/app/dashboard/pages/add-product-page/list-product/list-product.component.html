@@ -83,4 +83,4 @@
     </div>
 </div>
 
-<app-window-modal  *ngIf="isModalOpen" (closeModal)="closeModalInfo() "></app-window-modal>
+<app-window-modal  *ngIf="isModalOpen" (closeModal)="closeModalInfo()" [infoForModal]="infoModal "></app-window-modal>
