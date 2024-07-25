@@ -73,3 +73,19 @@ tr:nth-child(even){
 .btn-danger:hover {
     background-color: #772c2c;
 }
+
+
+/*  modal btn-info */
+.btn-info{
+    padding: 5px;
+    border: 0px;
+    border-radius: 3px;
+}
+
+.btn-info:hover{
+    background-color: #c5c5c5;
+}
+
+#btn-info-check{
+    display: none;
+}

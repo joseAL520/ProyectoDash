@@ -47,21 +47,20 @@
 .conten{
   background-color:#f8f8f8c9;
 }
+  .conte1{
+    grid-column-start: span 2;
+  } 
 
  .conte2{
     grid-column-start: span 2;
-    
-
   }
 
   .conte3{
     grid-column-start: span 2;
-  
   }
 
   .conte6{
     grid-column-start: span 2;
-   
   }
 
   .conte10{

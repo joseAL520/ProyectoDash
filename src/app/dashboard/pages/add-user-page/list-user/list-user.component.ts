@@ -25,6 +25,9 @@ export class ListUserComponent {
  public pageSize = 10;
 
  public myFom: FormGroup = this.fb.group({idBuscador:['']})
+ 
+ public isModalOpen = false;
+ infoModal: any[] = [];
 
  constructor(
     private fb: FormBuilder
@@ -54,6 +57,22 @@ export class ListUserComponent {
   searchUser(){
     const userId = this.myFom.value.idBuscador;
     this.searchUserId.emit(userId);
+  }
+
+
+  openModalInfo<T>(productfo: T):void {
+    
+    if(this.infoModal.length > 0){
+        this.infoModal.pop()
+    }
+
+
+    this.infoModal.push(productfo)
+    this.isModalOpen = true;
+  }
+
+  closeModalInfo() {
+    this.isModalOpen = false;
   }
 
 }

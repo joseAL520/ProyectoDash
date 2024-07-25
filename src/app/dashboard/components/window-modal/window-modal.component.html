@@ -7,7 +7,7 @@
         <div *ngFor="let item of infoForModal">
         
           <ng-container *ngIf="item.numeroId" >
-            <div class="conten conte1"><strong>ID:</strong> {{ item.numeroId }}</div>
+            <div class="conten conte1"><strong>Numero ID:</strong> {{ item.numeroId }}</div>
           </ng-container>
   
           <ng-container *ngIf="item.nombre">
@@ -40,8 +40,15 @@
           </ng-container>
   
           <ng-container *ngIf="item.numero">
-            <div class="conten conte9" ><strong>Número:</strong> {{ item.numero }}</div>
+            <div class="conten conte9" ><strong>Número Celular:</strong> {{ item.numero }}</div>
           </ng-container>
+
+          <ng-container *ngIf="item.numero">
+            <div class="conten conte9" ><strong>Número Telefonico:</strong> {{ item.numero }}</div>
+          </ng-container>
+
+
+          
   
           <ng-container *ngIf="item.fechaCreation">
             <div class="conten conte10" ><strong>Fecha de Creacion:</strong> {{ item.fechaCreation | date }}</div>
