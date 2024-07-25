@@ -23,10 +23,9 @@ export class ListProductComponent {
 
  public currentIndex = 0;
  public pageSize = 10;
-
-
  public myFom: FormGroup = this.fb.group({ nameBuscador:[''] })
-
+ public isModalOpen = false;
+ 
  constructor(
     private fb: FormBuilder
  ){}
@@ -57,6 +56,14 @@ export class ListProductComponent {
   searchProduct(){
     const userId = this.myFom.value.nameBuscador;
     this.productProductName.emit(userId);
+  }
+
+  openModalInfo(productfo: Productos) {
+    this.isModalOpen = true;
+  }
+
+  closeModalInfo() {
+    this.isModalOpen = false;
   }
 
 }

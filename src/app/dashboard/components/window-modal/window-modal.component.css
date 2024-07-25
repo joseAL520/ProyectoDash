@@ -1,0 +1,48 @@
+/* modal.component.css */
+.container-modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.486);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .content-modal {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 4px;
+    color: black;
+  }
+  
+  .content-modal h2 {
+    margin-bottom: 15px;
+  }
+  
+  .content-modal p {
+    padding: 15px 0;
+    border-top: 1px solid rgba(56, 56, 56, 0.87);
+    border-bottom: 1px solid rgba(56, 56, 56, 0.87);
+  }
+  
+  .content-modal .btn-cerrar {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .content-modal .btn-cerrar label {
+    padding: 7px 7px;
+    background-color: blue;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
