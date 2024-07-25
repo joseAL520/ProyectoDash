@@ -18,6 +18,7 @@ import { LineGraficComponent } from './components/line-grafic/line-grafic.compon
 import { PieGraficComponent } from './components/pie-grafic/pie-grafic/pie-grafic.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { HttpClientModule } from '@angular/common/http';
+import { WindowModalComponent } from './components/window-modal/window-modal.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     AddProductComponent,
     LineGraficComponent,
     PieGraficComponent,
-    CardsComponent
+    CardsComponent,
+    WindowModalComponent
   ],
   imports: [
     CommonModule,

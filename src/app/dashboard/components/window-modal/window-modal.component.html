@@ -1,0 +1,73 @@
+<div class="container-modal">
+   <div class="content-modal">
+     <h2>Mas Detalles</h2>
+      <div class="line"></div>
+     <div *ngIf="infoForModal.length > 0">
+      <div class="conten-info">
+        <div *ngFor="let item of infoForModal">
+        
+          <ng-container *ngIf="item.numeroId" >
+            <div class="conten conte1"><strong>Numero ID:</strong> {{ item.numeroId }}</div>
+          </ng-container>
+  
+          <ng-container *ngIf="item.nombre">
+            <div class="conten conte2"><strong>Nombre:</strong> {{ item.nombre }}</div>
+          </ng-container>
+  
+          <ng-container *ngIf="item.marca">
+            <div class="conten conte3"><strong>Marca:</strong> {{ item.marca }}</div>
+          </ng-container>
+  
+    
+          <ng-container *ngIf="item.provedor">
+            <div class="conten conte4"><strong>Proveedor:</strong> {{ item.provedor }}</div>
+          </ng-container>
+  
+          <ng-container *ngIf="item.cantidad !== undefined">
+            <div class="conten conte5"><strong>Categoria:</strong> {{ item.nameProductCode }}</div>
+          </ng-container>
+  
+          <ng-container *ngIf="item.nameProductCode">
+            <div class="conten conte6"><strong>Cantidad:</strong> {{ item.cantidad }}</div>
+          </ng-container>
+  
+          <ng-container *ngIf="item.direccion">
+            <div class="conten conte7"><strong>Dirección:</strong> {{ item.direccion }}</div>
+          </ng-container>
+  
+          <ng-container *ngIf="item.correo">
+            <div class="conten conte8"><strong>Correo:</strong> {{ item.correo }}</div>
+          </ng-container>
+  
+          <ng-container *ngIf="item.numero">
+            <div class="conten conte9" ><strong>Número Celular:</strong> {{ item.numero }}</div>
+          </ng-container>
+
+          <ng-container *ngIf="item.numero">
+            <div class="conten conte9" ><strong>Número Telefonico:</strong> {{ item.numero }}</div>
+          </ng-container>
+
+
+          
+  
+          <ng-container *ngIf="item.fechaCreation">
+            <div class="conten conte10" ><strong>Fecha de Creacion:</strong> {{ item.fechaCreation | date }}</div>
+          </ng-container>
+          <ng-container *ngIf="item.fechaCreation">
+            <div class="conten conte10" ><strong>Fecha de Actualizacion:</strong> {{ item.fechaCreation | date }}</div>
+          </ng-container>
+  
+  
+  
+        </div>
+      </div>
+      
+
+    </div>
+
+     <div class="btn-cerrar">
+       <label (click)="close()">Cerrar</label>
+     </div>
+     
+   </div>
+ </div>

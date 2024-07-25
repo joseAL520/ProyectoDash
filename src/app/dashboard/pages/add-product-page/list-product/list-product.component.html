@@ -15,6 +15,7 @@
                 <th class="control-table control-table-cantidad" >Cantidad</th>
                 <th></th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
 
@@ -29,7 +30,13 @@
                 <button 
                     class="btn-danger"
                     (click)="onDeleterUser(product.id!)"
-                > X </button>
+                > 
+                    <img 
+                        src="https://cdn-icons-png.flaticon.com/512/4914/4914888.png" 
+                        width="15px"
+                        height="15px"
+                        alt="icon"> 
+                </button>
             </td>  
             <td>
                 <button 
@@ -38,18 +45,27 @@
                 > 
                     <img 
                         src="https://cdn-icons-png.flaticon.com/512/2830/2830022.png" 
-                        width="10px"
-                        height="10px"
+                        width="15px"
+                        height="15px"
                         alt="icon">
                 </button>
-            </td>     
+            </td>   
+            <td>
+                <button 
+                    class="btn-info" 
+                    (click)="openModalInfo(product)"
+                > 
+                    <img 
+                        src="https://cdn-icons-png.flaticon.com/512/32/32175.png" 
+                        width="15px"
+                        height="15px"
+                        alt="icon">
+                </button>
+            </td>    
         </tr>
-
     </table> 
-        <hr>
-
+    <hr>
     <div class="container-btn">
-            
         <button 
             class="control-btn"
             (click)="previous()"
@@ -57,7 +73,6 @@
         >
             <- 
         </button>
-
         <button 
             class="control-btn"
             (click)="next()"
@@ -66,5 +81,6 @@
             -> 
         </button>
     </div>
-
 </div>
+
+<app-window-modal  *ngIf="isModalOpen" (closeModal)="closeModalInfo()" [infoForModal]="infoModal "></app-window-modal>

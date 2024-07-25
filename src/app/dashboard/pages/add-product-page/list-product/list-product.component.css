@@ -55,8 +55,11 @@ tr:nth-child(even){
     border: 0px;
 }
 
+/* botonoes de criud */
+
 
 .btn-danger{
+    padding: 5px;
     background-color: #e55353;
     border: 0px;
     border-radius: 3px;
@@ -68,6 +71,7 @@ tr:nth-child(even){
 
 
 .btn-update{
+    padding: 5px;
     background-color: #5392e5;
     border: 0px;
     border-radius: 3px;
@@ -76,3 +80,19 @@ tr:nth-child(even){
 .btn-update:hover {
     background-color: #233d5f;
 }
+
+/*  modal btn-info */
+.btn-info{
+    padding: 5px;
+    border: 0px;
+    border-radius: 3px;
+}
+
+.btn-info:hover{
+    background-color: #c5c5c5;
+}
+
+#btn-info-check{
+    display: none;
+}
+
