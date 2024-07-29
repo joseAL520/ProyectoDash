@@ -25,16 +25,22 @@ export class PieGraficComponent implements OnInit {
   ){}
 
   coloGenerator(){
-    const colores: any[] =[]
-    this.productCategory.forEach( () => {
-      let r = Math.floor(Math.random() * 128) + 127; // Rango: 127 a 255
-      let g = Math.floor(Math.random() * 128) + 127; // Rango: 127 a 255
-      let b = Math.floor(Math.random() * 128) + 127; // Rango: 127 a 255 
-      let color = `rgb(${r}, ${g}, ${b})`;
+    const colores: string[] = [];
+    // Define los rangos para los tonos de azul
+    const minBlue = 127; // Valor mínimo para azul (pastel)
+    const maxBlue = 255; // Valor máximo para azul (oscuro)
+
+    this.productCategory.forEach(() => {
+      const b = Math.floor(Math.random() * (maxBlue - minBlue + 1)) + minBlue;
+      const r = Math.floor(Math.random() * 100); // Rango: 0 a 100
+      const g = Math.floor(Math.random() * 100); // Rango: 0 a 100
+      
+      const color = `rgb(${r}, ${g}, ${b})`;
       colores.push(color);
     });
-    return colores
+    return colores;
   }
+  
 
 
   getProductValue(){
@@ -89,7 +95,7 @@ export class PieGraficComponent implements OnInit {
   createPiegrafic(){
 
     this.chartPie = new Chart('MyChart', {
-      type: 'pie',
+      type: 'doughnut',
       data: {
         labels: this.label,
         datasets: [

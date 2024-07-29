@@ -13,21 +13,20 @@
     width: 200px;
     border-radius: 5px;
     padding: 10px;
-    border: solid 1px rgba(0, 0, 0, 0.062);
+    border: solid 2px rgba(0, 0, 0, 0.062);
     gap: 10px;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.486);
 }
 .card-card1{
-    background-color: #1b9e3e;
+    background-color: #348FE2;
 }
 .card-card2{
-    background-color: #e55353;
+    background-color: #49B6D6;
 }
 .card-card3{
-    background-color: #5856d6;
+    background-color: #F59C1A;
 }
 .card-card4{
-    background-color: #f9b115;
+    background-color: #FF5B57;
 }
 
 span.card-inf {
