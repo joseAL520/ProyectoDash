@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
 
-interface MenuItem {
-  title:string,
-  type:string,
-}
 
 @Component({
   selector: 'app-dashboard-page',

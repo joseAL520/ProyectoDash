@@ -29,6 +29,11 @@
     background-color: #FF5B57;
 }
 
+
+.card:hover{
+    scale: 1.02;
+}
+
 span.card-inf {
     display: flex;
     justify-content: flex-end;

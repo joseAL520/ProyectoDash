@@ -1,5 +1,5 @@
 .container{
-    background-color: white;
+    background-color: #2d353c;
     border-radius: 5px;
     color: black;
     padding: 0;
@@ -31,8 +31,8 @@ thead{
 }
 
 tr:nth-child(even){
-    /* background-color: #49b5d67e; */
-    background-color: #00acac48;
+    /* background-color: #00acac48; */
+    background-color: #49b5d67e; 
     /* #00acac */
 }
   
@@ -49,6 +49,17 @@ tr:nth-child(even){
     color: white;
     border: 0;
     padding: 7px;
+    cursor: pointer;
+}
+
+
+.control-btn img{
+    width: 30px;
+    height: 30px;
+}
+
+.control-btn .control-rotate{
+    transform: rotate(180deg);
 }
 
 .control-btn:hover {

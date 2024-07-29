@@ -1,6 +1,6 @@
 .container{
     padding: 0;
-    background-color: white;
+    background-color:#2d353c;
     border-radius: 5px;
     color: black;
 }
@@ -17,7 +17,7 @@ input{
 }
 
 table{
-    background-color: white;
+    background-color:#ffffff;
     width: 100%;
     border-collapse: collapse;
   }
@@ -32,12 +32,13 @@ thead{
     border-bottom: solid 5px #6b778549;
 }
 
+
 tr:nth-child(even){
-    /* background-color: #49b5d67e; */
-    background-color: #00acac48;
-    /* #00acac */
+    background-color: #49b5d67e; 
+    /* background-color: #00acac48; */
+     /* #00acac */
 }
-  
+
   
 .container-btn{
     display: flex;
@@ -50,7 +51,15 @@ tr:nth-child(even){
     background: #348fe2;
     color: white;
     border: 0;
-    padding: 7px;
+    cursor: pointer;
+}
+.control-btn img{
+    width: 30px;
+    height: 30px;
+}
+
+.control-btn .control-rotate{
+    transform: rotate(180deg);
 }
 
 .control-btn:hover {
