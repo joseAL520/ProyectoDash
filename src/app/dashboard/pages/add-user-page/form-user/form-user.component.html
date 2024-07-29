@@ -1,45 +1,66 @@
-<span> Formulario  de Usuario </span>
-        <hr>
-        <form [formGroup]="myForm" (ngSubmit)="onSave()">
-            <input class="control control-id"           type="text"     formControlName="numeroId"       placeholder="Numeo de identificacion"          >
-            <span class="containr-form text-validator" *ngIf="isValidField('numeroId')">
-                {{ getFieldError('numeroId') }}
-            </span>
+<div class="container">
+    
+    <span> Formulario  de Usuario </span>
+    <div class="line"></div>
+    <form [formGroup]="myForm" (ngSubmit)="onSave()">
 
-            <input class="control control-nombre"       type="text"     formControlName="nombre"        placeholder="Nombres y apellidos"          >
-            <span class="containr-form text-validator" *ngIf="isValidField('nombre')">
-                {{ getFieldError('nombre') }}
-            </span>
-                 
-            <input class="control control-direccion"    type="text"     formControlName="direccion"        placeholder="direccion"        >
-            <span class="containr-form text-validator" *ngIf="isValidField('direccion')">
-                {{ getFieldError('direccion') }}
-            </span>
+        <div class="container__grid">
 
-            <input class="control control-correo"       type="text"     formControlName="correo"        placeholder="correo"       >
-            <span class="containr-form text-validator" *ngIf="isValidField('correo')">
-                {{ getFieldError('correo') }}
-            </span>
+            <div class="conteiner__control container__control__Id">
+                <input class="control control-id"           type="text"     formControlName="numeroId"       placeholder="Numeo de identificacion">
+                <span class="containr-form text-validator" *ngIf="isValidField('numeroId')">
+                    {{ getFieldError('numeroId') }}
+                </span>
+            </div>
+            
+            <div class="conteiner__control container__control__nombre">
+                <input class="control control-nombre"       type="text"     formControlName="nombre"        placeholder="Nombres y apellidos">
+                <span class="containr-form text-validator" *ngIf="isValidField('nombre')">
+                    {{ getFieldError('nombre') }}
+                </span>
+            </div>
 
-            <input class="control control-numb"         type="numero"   formControlName="numero"        placeholder="numero"       >
-            <span class="containr-form text-validator"  *ngIf="isValidField('numero')">
-                {{ getFieldError('numero') }}
-            </span>
+            <div class="conteiner__control container__control__direccion">
+                <input class="control control-direccion"    type="text"     formControlName="direccion"        placeholder="direccion">
+                <span class="containr-form text-validator" *ngIf="isValidField('direccion')">
+                    {{ getFieldError('direccion') }}
+                </span>
+            </div>
 
+            <div class="conteiner__control container__control__correo">
+                <input class="control control-correo"       type="text"     formControlName="correo"        placeholder="correo">
+                <span class="containr-form text-validator" *ngIf="isValidField('correo')">
+                    {{ getFieldError('correo') }}
+                </span>
+            </div>
+            <div class="conteiner__control">
+                
+                <input class="control control-numb"         type="numero"   formControlName="numero"        placeholder="numero Celular">
+                <span class="containr-form text-validator"  *ngIf="isValidField('numero')">
+                    {{ getFieldError('numero') }}
+                </span>
+            </div>
+
+        </div>
+        
+    </form>
+        <div class="conteiner__control__flex">
             <button type="submit" class="btn-agg" [disabled]=" btnAddUsr">
                 Agregar Usuario
             </button>
-        </form>
+            @if( btnActiveEdit ){
+            <div class="contaner-btn">
+                <button class="btn-Update" (click)="onUpdate()">
+                    <img 
+                    src="https://cdn-icons-png.flaticon.com/512/2830/2830022.png" 
+                    width="10px"
+                    height="10px"
+                    alt="icon">
+                </button>
+            </div>  
+            }
+        </div>
+       
 
-    @if( btnActiveEdit ){
-        <div class="contaner-btn">
-            <button class="btn-Update" (click)="onUpdate()">
-                <img 
-                src="https://cdn-icons-png.flaticon.com/512/2830/2830022.png" 
-                width="10px"
-                height="10px"
-                alt="icon">
-            </button>
-        </div>  
-    }
-        
+
+</div>

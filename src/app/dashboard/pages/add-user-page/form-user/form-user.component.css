@@ -1,41 +1,80 @@
-span {
-    font-size: 22px;
-    margin: 20px;
-    color: white;
-    
+.container{
+    display: block;
+    padding: 10px;
 }
+
+span {
+    width: 80%;
+    font-size: 22px;
+    color: white;
+}
+
+.line{
+    margin: 5px 0px;
+    width: 90%;
+    border: 1px solid white;
+}
+.container__grid {
+    width: 98%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 25px;
+    padding: 20px 0px;
+}
+
+.conteiner__control{
+    display: flex;
+    flex-direction: column;
+}
+
+.container__control__Id , .container__control__nombre{
+    grid-column: span 2;
+}
+
+.container__control__direccion, .container__control__correo{
+    grid-column: span 2;
+}
+
+.control{
+    background: #6b778549;
+    border-radius: 5px;
+    border: 1px solid #6b778549;
+    color: white;
+    padding: 10px;
+    margin: 0px 7px;
+}
+
+
+.control-categoria option{
+    background: #2d353c;
+    font-weight: 400;
+}
+
 
 .text-validator{
     font-size: 12px;
     color: rgba(255, 0, 0, 0.603);
-    padding: 0px;
-    margin-left: 25px;
+    padding: 3px 10px;
 }
 
-.control{
-    width: 86%;
-    background: #6b778549;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #6b778549;
-    color: white;
-    margin: 15px 15px 5px 15px;
-}
 
+.conteiner__control__flex{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .btn-agg {
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    background: #3399ff;
-    border: none;
-    padding: 12px;
-    color: rgb(255, 255, 255);
-    margin: 20px 6px 5px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-
+     justify-content: center;
+     width: 40%;
+     background: #348FE2;
+     border: none;
+     padding: 10px;
+     color: rgb(255, 255, 255);
+     font-size: 16px;
+     border-radius: 5px;
 }
 
 .btn-agg:hover {
@@ -43,18 +82,12 @@ span {
 }
 
 
-.contaner-btn{
-    display: flex;
-    justify-content: end;
-}
-
 .btn-Update{
     background: #21f0b2;
-    width: 15%;
+    justify-content: center;
     border: none;
-    padding: 12px;
+    padding: 10px;
     color: rgb(255, 255, 255);
-    margin: -48px 6px 5px 20px;
     font-size: 16px;
     border-radius: 5px;
 }

@@ -65,10 +65,9 @@ export class LineGraficComponent implements OnInit {
     if (ctx) {
       // Crear un gradiente lineal
       const gradient = ctx.createLinearGradient(0, 0, 170,  canvas.height);
-      gradient.addColorStop(0.20, 'rgba(0,35,255,1)');  
-      gradient.addColorStop(0.36, 'rgba(169,59,196,1)'); 
-      gradient.addColorStop(0.64, 'rgba(203,35,118,1)'); 
-      gradient.addColorStop(0.70, 'rgba(255,0,0,1)');    
+      gradient.addColorStop(0.30, 'rgba(0,172,172,1)');  
+      gradient.addColorStop(0.50, 'rgba(35,180,255,1)');  
+      gradient.addColorStop(1, 'rgba(0,91,255,1)'); 
 
       // Crear el gráfico
       this.chart = new Chart(canvas, {
