@@ -1,6 +1,8 @@
 .container{
-    background-color: white;
+    padding: 0;
+    background-color:#2d353c;
     border-radius: 5px;
+    color: black;
 }
 
 input{
@@ -15,9 +17,8 @@ input{
 }
 
 table{
-    background-color: white;
+    background-color:#ffffff;
     width: 100%;
-    text-align: center;
     border-collapse: collapse;
   }
   
@@ -31,10 +32,13 @@ thead{
     border-bottom: solid 5px #6b778549;
 }
 
+
 tr:nth-child(even){
-    background-color: #ddd;
+    background-color: #49b5d67e; 
+    /* background-color: #00acac48; */
+     /* #00acac */
 }
-  
+
   
 .container-btn{
     display: flex;
@@ -44,10 +48,18 @@ tr:nth-child(even){
 .control-btn{
     margin: 5px;
     border-radius: 5px;
-    background: #3399ff;
+    background: #348fe2;
     color: white;
-    border: 1px solid #3399ff;
-    padding: 7px;
+    border: 0;
+    cursor: pointer;
+}
+.control-btn img{
+    width: 30px;
+    height: 30px;
+}
+
+.control-btn .control-rotate{
+    transform: rotate(180deg);
 }
 
 .control-btn:hover {
@@ -60,9 +72,10 @@ tr:nth-child(even){
 
 .btn-danger{
     padding: 5px;
-    background-color: #e55353;
+    background-color:#FF5B57;
     border: 0px;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .btn-danger:hover {
@@ -72,9 +85,10 @@ tr:nth-child(even){
 
 .btn-update{
     padding: 5px;
-    background-color: #5392e5;
+    background-color: #348FE2;
     border: 0px;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .btn-update:hover {
@@ -86,13 +100,18 @@ tr:nth-child(even){
     padding: 5px;
     border: 0px;
     border-radius: 3px;
+    background-color: #c9c9c9;
+    cursor: pointer;
 }
 
 .btn-info:hover{
-    background-color: #c5c5c5;
+    background-color: #888888;
 }
 
 #btn-info-check{
     display: none;
 }
 
+img{
+    object-fit: cover;
+}

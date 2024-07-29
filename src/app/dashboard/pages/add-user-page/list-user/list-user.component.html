@@ -72,7 +72,7 @@
             (click)="previous()"
             [disabled]="currentIndex === 0"
         >
-            <- 
+        <img class="control-rotate" src="https://cdn-icons-png.flaticon.com/512/545/545682.png" alt="icon">
         </button>
 
         <button 
@@ -80,7 +80,7 @@
             (click)="next()"
             [disabled]="currentIndex + pageSize >= personList.length"
         >
-            -> 
+        <img src="https://cdn-icons-png.flaticon.com/512/545/545682.png" alt="icon">
         </button>
    </div>
 </div>

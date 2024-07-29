@@ -1,7 +1,45 @@
-.container{
-    height: 41rem;
+.header-contaner{
+    background-color : #2D353c ;
+    height: 100%;
 }
 
+.container_info{
+    width: auto;
+    height: 150px;
+    background-image: linear-gradient(rgba(3, 3, 3, 0.575), rgba(0, 0, 0, 0.568)), url("https://images.unsplash.com/photo-1579785996805-7bfabbff198d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+}
+
+
+.user__container{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.user__container .icon-user{
+    background-color: none;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: 1px solid white;
+    object-fit: cover;
+}
+
+.user__container  .title_name{
+    padding-top: 5px;
+}
+
+.user__container  .subtitle{
+    font-size: 10px;
+    color: #ffffff59;
+}
+
+.cotainer-menu{
+    padding: 5px ;
+}
 
 ul{
     margin: 10px;
@@ -14,6 +52,7 @@ li{
     height: 3rem;
     list-style: none;
     align-items: center;
+    cursor: pointer;
 }
 
 li:hover{
@@ -21,11 +60,17 @@ li:hover{
 }
 
 
-img{
-    width: 30px;
-    height: 30px;
+.cotainer-menu img{
+    width: 20px;
+    height: 20px;
     border-radius: 10px;
     padding: 5px;
-    background-color: rgb(255, 255, 255);
+    background-color: #348FE2;
     margin: 5px;
+    object-fit: cover;
+} 
+
+.tittle{
+    font-size: 15px;
+    font-weight: 600;
 }

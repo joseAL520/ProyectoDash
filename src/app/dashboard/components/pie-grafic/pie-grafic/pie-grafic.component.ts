@@ -25,16 +25,27 @@ export class PieGraficComponent implements OnInit {
   ){}
 
   coloGenerator(){
-    const colores: any[] =[]
-    this.productCategory.forEach( () => {
-      let r = Math.floor(Math.random() * 128) + 127; // Rango: 127 a 255
-      let g = Math.floor(Math.random() * 128) + 127; // Rango: 127 a 255
-      let b = Math.floor(Math.random() * 128) + 127; // Rango: 127 a 255 
-      let color = `rgb(${r}, ${g}, ${b})`;
-      colores.push(color);
-    });
-    return colores
+    const colores: Set<string> = new Set();
+    // Define los valores base para el color azul #348FE2 ajustados para un poco más de oscuridad
+    const baseR = 40;  // Reducido desde 52
+    const baseG = 120; // Reducido desde 143
+    const baseB = 200; // Reducido desde 226
+
+    // Define los rangos de variación para los tonos
+    const variationRange = 50;
+
+    while (colores.size < this.productCategory.length) {
+        const r = Math.max(0, Math.min(255, baseR + Math.floor(Math.random() * variationRange) - (variationRange / 2)));
+        const g = Math.max(0, Math.min(255, baseG + Math.floor(Math.random() * variationRange) - (variationRange / 2)));
+        const b = Math.max(0, Math.min(255, baseB + Math.floor(Math.random() * variationRange) - (variationRange / 2)));
+
+        const color = `rgb(${r}, ${g}, ${b})`;
+        colores.add(color);
+    }
+
+    return Array.from(colores);
   }
+  
 
 
   getProductValue(){
@@ -89,7 +100,7 @@ export class PieGraficComponent implements OnInit {
   createPiegrafic(){
 
     this.chartPie = new Chart('MyChart', {
-      type: 'pie',
+      type: 'doughnut',
       data: {
         labels: this.label,
         datasets: [

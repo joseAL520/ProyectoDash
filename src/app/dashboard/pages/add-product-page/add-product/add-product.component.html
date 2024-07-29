@@ -1,72 +1,97 @@
-<span> Formulario Producto </span>
-<hr>
-<form [formGroup]="myForm" (ngSubmit)="onSave()">
-    <input 
-        class="control control-nombre" type="text" 
-        placeholder="Nombre del Producto"
-        formControlName="nombre" 
-    >
-    <span class="containr-form text-validator" *ngIf="isValidField('nombre')">
-        {{ getFieldError('nombre') }}
-    </span>
+<div class="container">
+    <span> Formulario de Inscripcion del Producto </span>
+    <div class="line"></div>
+    <form [formGroup]="myForm" (ngSubmit)="onSave()">
+        
+        <div class="container__grid">
+            
+            
+            <div class="conteiner__control container__control__name">
+                <input 
+                class="control control-nombre" type="text" 
+                placeholder="Nombre del Producto"
+                formControlName="nombre" 
+                >
+                <span class="containr-form text-validator" *ngIf="isValidField('nombre')">
+                    {{ getFieldError('nombre') }}
+                </span>
+            </div>
 
-    <input 
-        class="control control-marca" type="text" 
-        placeholder="Marca del producto" 
-        formControlName="marca" 
-    >
-    <span class="containr-form text-validator" *ngIf="isValidField('marca')">
-        {{ getFieldError('marca') }}
-    </span>
+                    
+            <div class="conteiner__control container__control__marca">
+                <input 
+                    class="control control-marca" type="text" 
+                    placeholder="Marca del producto" 
+                    formControlName="marca" 
+                >
+                <span class="containr-form text-validator" *ngIf="isValidField('marca')">
+                    {{ getFieldError('marca') }}
+                </span>
+            </div>
+           
+            <div class="conteiner__control container__control__provedor">
+                <input 
+                    class="control control-provedor" type="text" 
+                    placeholder="Provedor" 
+                    formControlName="provedor" 
+                >
+                <span class="containr-form text-validator" *ngIf="isValidField('provedor')">
+                {{ getFieldError('provedor') }}
+                </span>
+            </div>
 
-    <input 
-        class="control control-provedor" type="text" 
-        placeholder="Provedor" 
-        formControlName="provedor" 
-    >
-    <span class="containr-form text-validator" *ngIf="isValidField('provedor')">
-        {{ getFieldError('provedor') }}
-    </span>
+            <div class="conteiner__control container__control__categoria">
+                <!-- <input 
+                class="control control-categoria" type="text" 
+                placeholder="Categoria"
+                formControlName="categoria" 
+                 > -->
+                <select  class="control control-categoria"  formControlName="categoria"  >
+                    <option value="">Seleccione la categoria</option>
+                    <option *ngFor="let categoria of categorias" [value]="categoria.code">
+                        {{ categoria.name }}
+                    </option>
+                </select>
+                <span class="containr-form text-validator" *ngIf="isValidField('categoria')">
+                    {{ getFieldError('categoria') }}
+                </span>
+            </div>
 
-    <!-- <input 
-        class="control control-categoria" type="text" 
-        placeholder="Categoria"
-        formControlName="categoria" 
-    > -->
-    <select  class="control control-categoria"  formControlName="categoria"  >
-        <option value="">Seleccione la categoria</option>
-        <option *ngFor="let categoria of categorias" [value]="categoria.code">
-            {{ categoria.name }}
-        </option>
-      </select>
-    <span class="containr-form text-validator" *ngIf="isValidField('categoria')">
-        {{ getFieldError('categoria') }}
-    </span>
+            <div class="conteiner__control container__control__cantidad">
+                <input 
+                    class="control control-cantidad " type="number" 
+                    placeholder="cantidad" 
+                    formControlName="cantidad"
+                 >
+                <span class="containr-form text-validator" *ngIf="isValidField('cantidad')">
+                    {{ getFieldError('cantidad') }}
+                </span>
+            </div>
+       
+        </div>
 
-    <input 
-        class="control control-cantidad " type="number" 
-        placeholder="cantidad" 
-        formControlName="cantidad"
-    >
-    <span class="containr-form text-validator" *ngIf="isValidField('cantidad')">
-        {{ getFieldError('cantidad') }}
-    </span>
-
-    <button  type="submit" class="btn-agg" [disabled]=" btnAdd" >
-        Agregar Producto
-    </button>
-</form>
-
-
-@if( btnActiveEdit ){
-    <div class="contaner-btn">
-        <button class="btn-Update" (click)="onUpdate()">
-            <img 
-            src="https://cdn-icons-png.flaticon.com/512/2830/2830022.png" 
-            width="10px"
-            height="10px"
-            alt="icon">
-        </button>
-    </div>  
-}
+        <div class="conteiner__control__flex">
+            <button  type="submit" class="btn-agg" [disabled]=" btnAdd" >
+                <img 
+                        src="https://cdn-icons-png.flaticon.com/512/10608/10608892.png" 
+                        width="30px"
+                        height="30px"
+                        alt="icon">
+            </button>
    
+
+            @if( btnActiveEdit ){
+                <div class="contaner-btn">
+                    <button class="btn-Update" (click)="onUpdate()">
+                        <img 
+                        src="https://cdn-icons-png.flaticon.com/512/2830/2830022.png" 
+                        width="20px"
+                        height="20px"
+                        alt="icon">
+                    </button>
+                </div>  
+            }
+        </div>
+    </form>
+
+</div>

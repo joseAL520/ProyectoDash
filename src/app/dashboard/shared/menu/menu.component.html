@@ -1,20 +1,28 @@
+<header class="header-contaner">
 
-<div class="container">
+       <div class="container_info">
+           <h2>Empresa</h2>
+           <br>
+           <div class="user__container">
+                <img 
+                class="icon-user"
+                src="https://img.freepik.com/foto-gratis/hombre-guapo-piel-brillante-posando_23-2149396129.jpg" 
+                alt="ico-user">
+
+                <span class="title_name">Jose angel Alvarez</span>
+                <span class="subtitle">Desarrolador Web</span>
+        </div>
+       </div> 
+       
+        <div class="cotainer-menu">
+            @for (item of menuItems; track $index) {
+                <ul>
     
-    <h1>Empresa</h1>
-    <hr>
-   
-   
-    <div class="cotainer-menu">
-        @for (item of menuItems; track $index) {
-            <ul>
-
-               <li
-               [routerLink]=" [item.route]"
-               routerLinkActive="active" 
-               > <img [src]="item.icon" alt="icon"> {{ item.title }}</li>
-            </ul>
-        }
-    </div>
-
-</div>
+                   <li
+                   [routerLink]=" [item.route]"
+                   routerLinkActive="active" 
+                   > <img [src]="item.icon" alt="icon"> <span class="tittle"> {{ item.title }} </span> </li>
+                </ul>
+            }
+        </div>
+</header>

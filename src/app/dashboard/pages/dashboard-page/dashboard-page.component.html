@@ -1,4 +1,5 @@
 <shared-user-conteiner [titulo]=" titulo "></shared-user-conteiner>
+
 <div class="container">
 
     <div class="container-cards">
@@ -7,38 +8,28 @@
         
     </div>
 
+
     <div class="container-panel">
-        <div class="container-grafic">
 
-            <div class="text-container">
-              
-                @for (item of menuDash; track $index) {
-
-                    <button 
-                        class="btn-dash"
-                        (click)=" diagramType(  item.type ) " >
-                         {{ item.title }}
-                    </button>
-                }
-                <hr>
-                <div class="grafic-container">
-                    @switch (itemMenu) {
-                        @case ('line') {
-                            <app-line-grafic></app-line-grafic>
-                        }
-                        @case ('pie') {
-                            <app-pie-grafic></app-pie-grafic>
-                        }
-                    }
-                  
-                </div>
-    
-
+        <div class="container__grid">
+            
+            <div class="content-grid container__line">
+                <app-line-grafic></app-line-grafic>
             </div>
 
-            
-            
-        </div>
-    </div>
+            <div class="content-grid container__pie">
+                <app-pie-grafic></app-pie-grafic>
+            </div>
 
+            <div class="content-grid container__text">
+                
+            </div>
+
+            <div class="content-grid container__text2">
+                Nisi nisi dolore minim ex velit. Anim eiusmod voluptate nulla reprehenderit ut anim eu duis culpa. Commodo reprehenderit deserunt enim laborum ex magna exercitation. Nulla reprehenderit exercitation cillum veniam ea laboris mollit pariatur nulla. Adipisicing et eiusmod dolore pariatur consectetur eu est ut.
+            </div>
+        </div>
+
+
+    </div>   
 </div>

@@ -1,25 +1,13 @@
-.container{
+
+ .container__flex{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
-    margin-left: -10px;
-    margin-top: -8px;
-}
+    flex-direction: row;
+ }
 
-.conteinerOne{
-    color: #000;
-    flex: 1;
-    width: 10%;
-}
-
-.conteinerOutle{
-    margin: 20px;
-}
-
-.conteinerTwo{
-    background-color: rgb(33, 38, 49);
+.flex__box1{
     width: 20%;
-    padding-left: 15px;
-    box-sizing: border-box;
 }
 
+.flex__box2{
+    width: 100%;
+}
