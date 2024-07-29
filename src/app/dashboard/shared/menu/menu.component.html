@@ -1,7 +1,10 @@
 <header class="header-contaner">
-    <div class="container">
-        <h1>Empresa</h1>
-        <hr>
+
+       <div class="container_info">
+           <h1>Empresa</h1>
+
+       </div> 
+       <hr>
         <div class="cotainer-menu">
             @for (item of menuItems; track $index) {
                 <ul>
@@ -9,10 +12,8 @@
                    <li
                    [routerLink]=" [item.route]"
                    routerLinkActive="active" 
-                   > <img [src]="item.icon" alt="icon"> {{ item.title }}</li>
+                   > <img [src]="item.icon" alt="icon"> <span class="tittle"> {{ item.title }} </span> </li>
                 </ul>
             }
         </div>
-    
-    </div>
 </header>
