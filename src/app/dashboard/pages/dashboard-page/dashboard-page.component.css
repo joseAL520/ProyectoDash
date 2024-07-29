@@ -1,21 +1,28 @@
 
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.container-cards{
+    width: 90%;
+}
+
+.line{
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
 
 .container-panel{
     background-color: white;
-    margin: 10px;
+    margin: 20px 0px;
     padding: 10px;
     border: solid 1px rgba(128, 128, 128, 0.281);
     border-radius: 5px;
-    width: auto;
-    height: 550px;
-
+    width: 80%;
 }
 
-
-h6{
-    color: gray;
-}
 
 .btn-dash{
     background: #3399ff;
@@ -23,7 +30,9 @@ h6{
     padding: 12px;
     color: rgb(255, 255, 255);
     margin-left: 5px;
+    margin-bottom: 5px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .btn-dash:hover {

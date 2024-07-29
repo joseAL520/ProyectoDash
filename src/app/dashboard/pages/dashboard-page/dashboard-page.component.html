@@ -1,4 +1,5 @@
 <shared-user-conteiner [titulo]=" titulo "></shared-user-conteiner>
+
 <div class="container">
 
     <div class="container-cards">
@@ -7,38 +8,27 @@
         
     </div>
 
+
     <div class="container-panel">
-        <div class="container-grafic">
+        @for (item of menuDash; track $index) {
+            <button 
+                class="btn-dash"
+                (click)=" diagramType(  item.type ) " >
+                {{ item.title }}
+            </button>
+        }
+        
+        <div class="line"></div>
 
-            <div class="text-container">
-              
-                @for (item of menuDash; track $index) {
-
-                    <button 
-                        class="btn-dash"
-                        (click)=" diagramType(  item.type ) " >
-                         {{ item.title }}
-                    </button>
+        <div class="grafic-container">
+            @switch (itemMenu) {
+                @case ('line') {
+                    <app-line-grafic></app-line-grafic>
                 }
-                <hr>
-                <div class="grafic-container">
-                    @switch (itemMenu) {
-                        @case ('line') {
-                            <app-line-grafic></app-line-grafic>
-                        }
-                        @case ('pie') {
-                            <app-pie-grafic></app-pie-grafic>
-                        }
-                    }
-                  
-                </div>
-    
-
-            </div>
-
-            
-            
+                @case ('pie') {
+                    <app-pie-grafic></app-pie-grafic>
+                }
+            }   
         </div>
-    </div>
-
+    </div>   
 </div>

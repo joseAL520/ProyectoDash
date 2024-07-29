@@ -1,20 +1,18 @@
-
-<div class="container">
+<header class="header-contaner">
+    <div class="container">
+        <h1>Empresa</h1>
+        <hr>
+        <div class="cotainer-menu">
+            @for (item of menuItems; track $index) {
+                <ul>
     
-    <h1>Empresa</h1>
-    <hr>
-   
-   
-    <div class="cotainer-menu">
-        @for (item of menuItems; track $index) {
-            <ul>
-
-               <li
-               [routerLink]=" [item.route]"
-               routerLinkActive="active" 
-               > <img [src]="item.icon" alt="icon"> {{ item.title }}</li>
-            </ul>
-        }
+                   <li
+                   [routerLink]=" [item.route]"
+                   routerLinkActive="active" 
+                   > <img [src]="item.icon" alt="icon"> {{ item.title }}</li>
+                </ul>
+            }
+        </div>
+    
     </div>
-
-</div>
+</header>

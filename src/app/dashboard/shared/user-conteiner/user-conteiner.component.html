@@ -1,5 +1,12 @@
 <div class="container">
-
+    <div class="conteinerText">
+        <span> 
+            <strong>
+                {{ titulo | uppercase }} 
+            </strong>
+        </span>
+    </div> 
+   
     <div class="conteinerUser">
 
         <img 
@@ -13,19 +20,17 @@
             alt="icon-email">
 
         <div class="line-verticle"></div>
-
-        <img 
+        
+        <div class="user__container">
+            <img 
             class="icon-user"
             src="https://img.freepik.com/foto-gratis/hombre-guapo-piel-brillante-posando_23-2149396129.jpg" 
             alt="ico-user">
+
+            <span class="title_name">Jose angel Alvarez</span>
+        </div>
+        
     </div>
 
-    <hr class="line">
-    <div class="conteinerText">
-        <span> 
-            <strong>
-                {{ titulo | uppercase }} 
-            </strong>
-        </span>
-    </div> 
+ 
 </div>
