@@ -25,20 +25,25 @@ export class PieGraficComponent implements OnInit {
   ){}
 
   coloGenerator(){
-    const colores: string[] = [];
-    // Define los rangos para los tonos de azul
-    const minBlue = 127; // Valor mínimo para azul (pastel)
-    const maxBlue = 255; // Valor máximo para azul (oscuro)
+    const colores: Set<string> = new Set();
+    // Define los valores base para el color azul #348FE2 ajustados para un poco más de oscuridad
+    const baseR = 40;  // Reducido desde 52
+    const baseG = 120; // Reducido desde 143
+    const baseB = 200; // Reducido desde 226
 
-    this.productCategory.forEach(() => {
-      const b = Math.floor(Math.random() * (maxBlue - minBlue + 1)) + minBlue;
-      const r = Math.floor(Math.random() * 100); // Rango: 0 a 100
-      const g = Math.floor(Math.random() * 100); // Rango: 0 a 100
-      
-      const color = `rgb(${r}, ${g}, ${b})`;
-      colores.push(color);
-    });
-    return colores;
+    // Define los rangos de variación para los tonos
+    const variationRange = 50;
+
+    while (colores.size < this.productCategory.length) {
+        const r = Math.max(0, Math.min(255, baseR + Math.floor(Math.random() * variationRange) - (variationRange / 2)));
+        const g = Math.max(0, Math.min(255, baseG + Math.floor(Math.random() * variationRange) - (variationRange / 2)));
+        const b = Math.max(0, Math.min(255, baseB + Math.floor(Math.random() * variationRange) - (variationRange / 2)));
+
+        const color = `rgb(${r}, ${g}, ${b})`;
+        colores.add(color);
+    }
+
+    return Array.from(colores);
   }
   
 

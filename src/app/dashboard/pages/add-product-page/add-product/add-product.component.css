@@ -77,7 +77,6 @@ span {
 }
 
 .btn-agg {
-     justify-content: center;
      width: 40%;
      background: #348FE2;
      border: none;
@@ -85,6 +84,7 @@ span {
      color: rgb(255, 255, 255);
      font-size: 16px;
      border-radius: 5px;
+     margin: 0px 10px;
 }
 
 .btn-agg:hover {
