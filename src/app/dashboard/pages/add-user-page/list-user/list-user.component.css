@@ -1,6 +1,8 @@
 .container{
     background-color: white;
     border-radius: 5px;
+    color: black;
+    padding: 0;
 }
 
 .search-user{
@@ -30,7 +32,9 @@ thead{
 }
 
 tr:nth-child(even){
-    background-color: #ddd;
+    /* background-color: #49b5d67e; */
+    background-color: #00acac48;
+    /* #00acac */
 }
   
   
@@ -42,9 +46,9 @@ tr:nth-child(even){
 .control-btn{
     margin: 5px;
     border-radius: 5px;
-    background: #3399ff;
+    background: #348fe2;
     color: white;
-    border: 1px solid #3399ff;
+    border: 0;
     padding: 7px;
 }
 
@@ -54,20 +58,13 @@ tr:nth-child(even){
 }
 
 
+
 .btn-danger{
-    background-color: #e55353;
+    padding: 5px;
+    background-color:#FF5B57;
     border: 0px;
     border-radius: 3px;
-}
-
-.btn-update{
-    background-color: #5392e5;
-    border: 0px;
-    border-radius: 3px;
-}
-
-.btn-update:hover {
-    background-color: #233d5f;
+    cursor: pointer;
 }
 
 .btn-danger:hover {
@@ -75,17 +72,35 @@ tr:nth-child(even){
 }
 
 
+.btn-update{
+    padding: 5px;
+    background-color: #348FE2;
+    border: 0px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-update:hover {
+    background-color: #233d5f;
+}
+
 /*  modal btn-info */
 .btn-info{
     padding: 5px;
     border: 0px;
     border-radius: 3px;
+    background-color: #c9c9c9;
+    cursor: pointer;
 }
 
 .btn-info:hover{
-    background-color: #c5c5c5;
+    background-color: #888888;
 }
 
 #btn-info-check{
     display: none;
+}
+
+img{
+    object-fit: cover;
 }
