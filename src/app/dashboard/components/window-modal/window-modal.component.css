@@ -59,11 +59,8 @@
     grid-column-start: span 2;
   }
 
-  .conte6{
-    grid-column-start: span 2;
-  }
 
-  .conte10{
+  .conte10   .conte10-5{
     background-color: rgba(250, 235, 215, 0.548);
   }  
 

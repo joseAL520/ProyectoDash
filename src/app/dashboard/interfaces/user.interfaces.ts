@@ -6,6 +6,7 @@ export interface User  {
     direccion:string
     correo:string
     numero:string
+    telefono:string
     fechaCreation:string
     fechaUpdate?:string
 }

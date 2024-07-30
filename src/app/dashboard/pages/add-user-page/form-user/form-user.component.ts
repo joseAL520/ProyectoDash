@@ -35,6 +35,7 @@ export class FormUserComponent implements OnChanges{
     direccion:['',[Validators.required]],
     correo:['',[Validators.required,  Validators.email]],
     numero:[,[Validators.required,  Validators.minLength(10)]],
+    telefono:[,[Validators.required,  Validators.minLength(6)]],
     fechaCreation:[this.initalFormValue.fechaCreacion ],
     fechaUpdate: [this.initalFormValue.fetchaUpdat]
   })

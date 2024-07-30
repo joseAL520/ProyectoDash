@@ -30,6 +30,9 @@
           <ng-container *ngIf="item.nameProductCode">
             <div class="conten conte6"><strong>Cantidad:</strong> {{ item.cantidad }}</div>
           </ng-container>
+          <ng-container *ngIf="item.nameProductCode">
+            <div class="conten conte6-5"><strong>Precio:</strong> {{ (item.precio || 0) |   currency:'COP ':'symbol':'1.2-2'  }}</div>
+          </ng-container>
   
           <ng-container *ngIf="item.direccion">
             <div class="conten conte7"><strong>Dirección:</strong> {{ item.direccion }}</div>
@@ -44,8 +47,8 @@
           </ng-container>
 
           <ng-container *ngIf="item.numero">
-            <div class="conten conte9" ><strong>Número Telefonico:</strong> {{ item.numero }}</div>
-          </ng-container>
+            <div class="conten conte9-5" ><strong>Número Telefonico:</strong> {{ item.telefono || 'Nan' }}</div>
+          </ng-container> 
 
 
           
@@ -55,7 +58,7 @@
           </ng-container>
           
           <ng-container *ngIf="item.fechaCreation">
-            <div class="conten conte10" ><strong>Fecha de Actualizacion:</strong> {{ item.fechaUpdate | date }}</div>
+            <div class="conten conte10-5" ><strong>Fecha de Actualizacion:</strong> {{ (item.fechaUpdate | date ) || 'Nan' }}</div>
           </ng-container>
   
   

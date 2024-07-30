@@ -13,4 +13,7 @@ export interface InfoModal {
     numero?:string
     fechaCreation?:string 
     fechaUpdate?:string
+    telefono?:string
+    precio?:string
+
 }

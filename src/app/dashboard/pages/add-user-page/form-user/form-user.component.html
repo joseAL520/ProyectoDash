@@ -41,6 +41,15 @@
                 </span>
             </div>
 
+            <div class="conteiner__control">
+                
+                <input class="control control-tel"         type="numero"   formControlName="telefono"        placeholder="Telefono Celular">
+                <span class="containr-form text-validator"  *ngIf="isValidField('telefono')">
+                    {{ getFieldError('telefono') }}
+                </span>
+            </div>
+
+
         </div>
         
     </form>

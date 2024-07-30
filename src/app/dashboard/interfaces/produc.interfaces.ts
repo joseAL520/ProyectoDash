@@ -10,6 +10,7 @@ export interface Productos {
     fechaCreation:string 
     nameProductCode?:string
     fechaUpdate?:string
+    precio:number
 }
 
 
