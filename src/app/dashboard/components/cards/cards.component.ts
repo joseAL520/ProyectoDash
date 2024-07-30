@@ -13,7 +13,7 @@ export class CardsComponent implements OnInit{
 
   public user$!: number
   public totalProduct$!: number
-
+  public priceTotalProduc!: number
   constructor(
     private srvProdcut: ProductServicesService,
     private srvUsers: UserServicesService
@@ -36,9 +36,19 @@ export class CardsComponent implements OnInit{
     ).subscribe()
   }
 
+  priceTotalProduct(){
+    this.srvProdcut.getProductList().pipe(
+      map(valu => valu.map( product => ({ price: Number(product.precio), cant: product.cantidad}))),
+      map(res =>  res.map( value => {  const result = value.price * value.cant;  return result; })),
+      map(priceTotal => priceTotal.reduce((acum, value) => acum + value, 0 )),
+      map(price=> this.priceTotalProduc = price )
+    ).subscribe()
+  }
+
   ngOnInit(): void {
     this.totalUser();
     this.totalProduct();
+    this.priceTotalProduct();
   }
 
 

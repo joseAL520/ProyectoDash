@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { WindowModalComponent } from './components/window-modal/window-modal.component';
 import { BarGraficComponent } from './components/bar-grafic/bar-grafic.component';
 import { CurrencyFormatDirective } from './directive/currency-format.directive';
+import { CurrencyFormatPipe } from './pipe/currency-format.pipe';
 
 
 
@@ -42,7 +43,8 @@ import { CurrencyFormatDirective } from './directive/currency-format.directive';
     CardsComponent,
     WindowModalComponent,
     BarGraficComponent,
-    CurrencyFormatDirective
+    CurrencyFormatDirective,
+    CurrencyFormatPipe
   ],
   imports: [
     CommonModule,
