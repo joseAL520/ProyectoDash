@@ -39,7 +39,7 @@ export class AddProductComponent implements OnChanges{
     cantidad:[ ,[Validators.required, Validators.min(0)]],
     fechaCreation:[ this.initalFormValue.fechaCreacion ],
     fechaUpdate: [this.initalFormValue.fetchaUpdat],
-    precio:[,[Validators.required, Validators.min(0)]]
+    precio:[,[Validators.required]]
   })
 
   constructor(

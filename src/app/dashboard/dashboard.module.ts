@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
@@ -20,6 +20,9 @@ import { CardsComponent } from './components/cards/cards.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WindowModalComponent } from './components/window-modal/window-modal.component';
 import { BarGraficComponent } from './components/bar-grafic/bar-grafic.component';
+import { CurrencyFormatDirective } from './directive/currency-format.directive';
+
+
 
 
 @NgModule({
@@ -38,7 +41,8 @@ import { BarGraficComponent } from './components/bar-grafic/bar-grafic.component
     PieGraficComponent,
     CardsComponent,
     WindowModalComponent,
-    BarGraficComponent
+    BarGraficComponent,
+    CurrencyFormatDirective
   ],
   imports: [
     CommonModule,
@@ -49,6 +53,9 @@ import { BarGraficComponent } from './components/bar-grafic/bar-grafic.component
   exports:[
     MenuComponent,
     UserConteinerComponent
-  ]
+  ],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'es-CO' } // Configura el local globalmente
+  ],
 })
 export class DashboardModule { }
