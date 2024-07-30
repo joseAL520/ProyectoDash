@@ -29,7 +29,8 @@ export class FormUserComponent implements OnChanges{
     direccion:['',[Validators.required]],
     correo:['',[Validators.required,  Validators.email]],
     numero:[,[Validators.required,  Validators.minLength(10)]],
-    fechaCreation:[ Date() ]
+    fechaCreation:[ Date() ],
+    fechaUpdate: ['']
   })
 
   constructor(
@@ -71,12 +72,13 @@ export class FormUserComponent implements OnChanges{
 
   onUpdate(): void {
     if (this.myForm.valid && this.userByUp) {
+      this.myForm.patchValue({
+        fechaUpdate: Date()
+      });
       this.updateUserEvent.emit(this.myForm.value);
       this.myForm.reset();
-
       this.btnActiveEdit = false;
       this.btnAddUsr = false;
-      return
     }
   }
 

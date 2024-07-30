@@ -9,6 +9,7 @@ export interface Productos {
     cantidad: number
     fechaCreation:string 
     nameProductCode?:string
+    fechaUpdate?:string
 }
 
 

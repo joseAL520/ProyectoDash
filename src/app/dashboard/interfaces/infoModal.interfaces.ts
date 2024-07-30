@@ -12,4 +12,5 @@ export interface InfoModal {
     correo?:string
     numero?:string
     fechaCreation?:string 
+    fechaUpdate?:string
 }

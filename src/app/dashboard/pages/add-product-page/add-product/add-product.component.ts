@@ -32,7 +32,8 @@ export class AddProductComponent implements OnChanges{
     provedor:['',[Validators.required, Validators.minLength(3)]],
     categoria:['',[Validators.required ]],
     cantidad:[ ,[Validators.required, Validators.min(0)]],
-    fechaCreation:[ Date() ]
+    fechaCreation:[ Date() ],
+    fechaUpdate: ['']
   })
 
   constructor(
@@ -75,6 +76,9 @@ export class AddProductComponent implements OnChanges{
 
   onUpdate(): void {
     if (this.myForm.valid && this.productByUp) {
+      this.myForm.patchValue({
+        fechaUpdate: Date()
+      });
       this.updateUserEvent.emit(this.myForm.value);
       this.myForm.reset();
       this.btnActiveEdit = false;
