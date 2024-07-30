@@ -95,7 +95,7 @@ export class AddProductComponent implements OnChanges{
         fechaUpdate: Date()
       });
       this.updateUserEvent.emit(this.myForm.value);
-      this.myForm.reset();
+      this.reset();
       this.btnActiveEdit = false;
       this.btnAdd = false;
       return
