@@ -22,5 +22,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 1)  insatalamos el json-server:  npm install -g json-server.
 2)  nos paramos o dirijoms al Json en el cmd.
 3)  Arrancamos el server de Api json-server --watch <nombre-del-archivo.json>
+e
+xample: json-server --watch dashboard-api.json
 
 
