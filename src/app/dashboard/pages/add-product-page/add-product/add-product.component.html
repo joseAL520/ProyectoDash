@@ -67,6 +67,19 @@
                     {{ getFieldError('cantidad') }}
                 </span>
             </div>
+
+            <div class="conteiner__control container__control__precio">
+                <input 
+                    class="control control-precio " 
+                    type="text" 
+                    placeholder="precio" 
+                    appCurrencyFormat
+                    formControlName="precio"
+                 >
+                <span class="containr-form text-validator" *ngIf="isValidField('precio')">
+                    {{ getFieldError('precio') }}
+                </span>
+            </div>
        
         </div>
 

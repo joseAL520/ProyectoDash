@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CategoriaProduct, CATEGORIAS, Productos } from '../../../interfaces/produc.interfaces';
 import { v4 as uuidv4  } from 'uuid';
-
 @Component({
   selector: 'add-product',
   templateUrl: './add-product.component.html',
@@ -25,14 +24,22 @@ export class AddProductComponent implements OnChanges{
 
   categorias: CategoriaProduct[] = CATEGORIAS;
 
+  public initalFormValue = {
+    id:uuidv4() ,
+    fechaCreacion: Date(),
+    fetchaUpdat: ''
+  }
+  
   public myForm:FormGroup = this.fb.group({
-    id:[ uuidv4() ],
+    id:[ this.initalFormValue.id],
     nombre:['',[Validators.required, Validators.minLength(3)]],
     marca:['',[Validators.required, Validators.minLength(3) ]],
     provedor:['',[Validators.required, Validators.minLength(3)]],
     categoria:['',[Validators.required ]],
     cantidad:[ ,[Validators.required, Validators.min(0)]],
-    fechaCreation:[ Date() ]
+    fechaCreation:[ this.initalFormValue.fechaCreacion ],
+    fechaUpdate: [this.initalFormValue.fetchaUpdat],
+    precio:[,[Validators.required]]
   })
 
   constructor(
@@ -67,21 +74,35 @@ export class AddProductComponent implements OnChanges{
   onSave(): void{
     if(this.myForm.valid){
       this.addProductFomr.emit( this.myForm.value);
-      this.myForm.reset()
+      this.reset()
       return
     }
+    
   }
 
+  reset(){
+    this.myForm.reset({
+      ...this.initalFormValue,
+      id: uuidv4(),
+      fechaCreation: Date(),
+      fetchaUpdat: ''
+    })
+  }
 
   onUpdate(): void {
     if (this.myForm.valid && this.productByUp) {
+      this.myForm.patchValue({
+        fechaUpdate: Date()
+      });
       this.updateUserEvent.emit(this.myForm.value);
-      this.myForm.reset();
+      this.reset();
       this.btnActiveEdit = false;
       this.btnAdd = false;
       return
     }
   }
+
+
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['productByUp'] && changes['productByUp'].currentValue) {

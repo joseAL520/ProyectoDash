@@ -22,14 +22,22 @@ export class FormUserComponent implements OnChanges{
   public btnActiveEdit:boolean = false;
   public btnAddUsr:boolean = false;
 
+  public initalFormValue = {
+    id:uuidv4() ,
+    fechaCreacion: Date(),
+    fetchaUpdat: ''
+  }
+
   public myForm:FormGroup = this.fb.group({
-    id: [uuidv4() ] ,
+    id: [this.initalFormValue.id ] ,
     numeroId:['',[Validators.required,  Validators.minLength(10)]],
     nombre:['',[Validators.required,  Validators.minLength(3)]],
     direccion:['',[Validators.required]],
     correo:['',[Validators.required,  Validators.email]],
     numero:[,[Validators.required,  Validators.minLength(10)]],
-    fechaCreation:[ Date() ]
+    telefono:[,[Validators.required,  Validators.minLength(6)]],
+    fechaCreation:[this.initalFormValue.fechaCreacion ],
+    fechaUpdate: [this.initalFormValue.fetchaUpdat]
   })
 
   constructor(
@@ -64,19 +72,29 @@ export class FormUserComponent implements OnChanges{
   onSave(): void{
     if(this.myForm.valid){
       this.addUserFomr.emit( this.myForm.value);
-      this.myForm.reset()
+      this.resetForm();
       return
     }
   }
 
+  resetForm(){
+    this.myForm.reset({
+      ...this.initalFormValue,
+      id: uuidv4(),
+      fechaCreation: Date(),
+      fetchaUpdat: ''
+    })
+  }
+
   onUpdate(): void {
     if (this.myForm.valid && this.userByUp) {
+      this.myForm.patchValue({
+        fechaUpdate: Date()
+      });
       this.updateUserEvent.emit(this.myForm.value);
-      this.myForm.reset();
-
+      this.resetForm();
       this.btnActiveEdit = false;
       this.btnAddUsr = false;
-      return
     }
   }
 

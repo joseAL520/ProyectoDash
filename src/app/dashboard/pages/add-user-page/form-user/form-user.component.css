@@ -97,3 +97,18 @@ span {
 .btn-Update:hover{
     background: #12805f;
 }
+
+@media (max-width:650px) {
+    .container__grid {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+
+    span{
+        font-size: 15px;
+    }
+    .btn-agg{
+        width: auto;
+    }
+}

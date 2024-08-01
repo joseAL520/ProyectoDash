@@ -41,11 +41,20 @@
                 </span>
             </div>
 
+            <div class="conteiner__control">
+                
+                <input class="control control-tel"         type="numero"   formControlName="telefono"        placeholder="Telefono Celular">
+                <span class="containr-form text-validator"  *ngIf="isValidField('telefono')">
+                    {{ getFieldError('telefono') }}
+                </span>
+            </div>
+
+
         </div>
         
     </form>
         <div class="conteiner__control__flex">
-            <button type="submit" class="btn-agg" [disabled]=" btnAddUsr">
+            <button type="submit" class="btn-agg" [disabled]=" btnAddUsr" (click)="onSave()">
                 <img width="25px" height="25px" src="https://cdn-icons-png.flaticon.com/512/4175/4175032.png" alt="icon">
             </button>
             @if( btnActiveEdit ){
