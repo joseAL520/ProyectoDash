@@ -114,3 +114,21 @@ tr:nth-child(even){
 img{
     object-fit: cover;
 }
+
+
+@media(max-width:650px){
+
+    th.control-table-marca,
+    th.control-table-provedor,
+    th.control-table-categoria{
+        display: none;
+    }
+
+
+    .column_direccion,
+    .column_correo,
+    .column_numero{
+        display: none;
+    }
+
+}
