@@ -11,3 +11,14 @@
 .flex__box2{
     width: 100%;
 }
+
+
+@media (max-width: 650px){
+    .flex__box1{
+        width: 12%;
+    }
+    
+    .flex__box2{
+        width: 88%;
+    }
+}

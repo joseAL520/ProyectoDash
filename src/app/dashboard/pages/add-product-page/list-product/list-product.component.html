@@ -20,12 +20,12 @@
         </thead>
 
         <tr *ngFor="let product of productList.slice(currentIndex,currentIndex + pageSize); let i = index" >
-            <td>{{ currentIndex  + i + 1 }}</td>
-            <td>{{ product.nombre }}</td>
-            <td>{{ product.marca }}</td>
-            <td>{{ product.provedor }}</td>
-            <td>{{ product.nameProductCode}}</td>
-            <td>{{ product.cantidad }}</td>
+            <td class="colum_index" >{{ currentIndex  + i + 1 }}</td>
+            <td class="colum_nombre" >{{ product.nombre }}</td>
+            <td class="colum_marca" >{{ product.marca }}</td>
+            <td class="colum_provedor" >{{ product.provedor }}</td>
+            <td class="colum_nombreProduct" >{{ product.nameProductCode}}</td>
+            <td class="colum_cant" >{{ product.cantidad }}</td>
             <td>
                 <button 
                     class="btn-danger"

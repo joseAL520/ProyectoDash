@@ -31,3 +31,12 @@
     0%{transform:scale(.7)} 
     100%{transform:scale(1)} 
 }
+
+
+@media(max-width:650px){
+    .container{
+        flex-wrap: nowrap;
+        animation:scale-up-center 1s;
+    }
+    
+}   

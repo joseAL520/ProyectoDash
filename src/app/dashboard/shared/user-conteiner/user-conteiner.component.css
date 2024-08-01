@@ -40,3 +40,23 @@ span{
     font-size: 10px;
     font-weight: 600;
 }
+
+
+@media (max-width: 650px){
+    .container{
+        justify-content: center;
+        padding: 13px 0px;
+    }
+    span{
+        margin: 10px;
+        color: black;
+    }
+
+    .icon-user{
+      display: none;
+    }
+
+    .title_name{
+       display: none;
+    }
+}

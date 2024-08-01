@@ -40,7 +40,7 @@
 .container__text{
     grid-row: span 2;
 }
-.container__text2{
+.container__bar{
     grid-column: span 2;
 }
 
@@ -48,4 +48,20 @@
 @keyframes scale-up-center{ 
     0%{transform:scale(.7)} 
     100%{transform:scale(1)} 
+}
+
+
+@media (max-width:650px){
+    .container__grid{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content-grid{
+        padding: 5px;
+    }
+
+    .container__text{
+       display: none;
+    }
 }

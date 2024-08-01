@@ -74,3 +74,61 @@ li:hover{
     font-size: 15px;
     font-weight: 600;
 }
+
+ /* Styles for dropdown menu */
+.dropdown-toggle {
+    display: none;
+}
+
+.dropdown-button {
+    display: none;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 650px) {
+    .header-contaner {
+        background-color: #2D353c;
+        height: auto;
+    }
+    .container_info {
+        display: none;
+    }
+
+    /* menu */
+    .cotainer-menu {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        background-color: #2d353cc7;
+        backdrop-filter: blur(1.5rem);
+        border-radius: 0px 0px 40px 2px;
+        height: 50%;
+        transition: transform 0.3s ease;
+        transform: translateX(100%);
+    }
+
+    .dropdown-button {
+        display: block;
+    }
+
+    #dropdown-toggle:checked ~ .cotainer-menu {
+        display: flex;
+        transform: translateX(0);
+        height: auto;
+        padding: 10px 0px;
+    }
+
+
+
+
+    li{
+        border-radius: 5px;
+        border-bottom: 1px solid;
+    }
+
+}

@@ -20,11 +20,11 @@
     </thead>
 
     <tr *ngFor="let person of personList.slice(currentIndex,currentIndex + pageSize); let i=index">
-        <td>{{ currentIndex +  i + 1 }}</td>
-        <td> {{ person.nombre | uppercase }} </td>
-        <td>{{ person.direccion }}</td>
-        <td> {{ person.correo }} </td>
-        <td> {{ person.numero }}</td>
+        <td class="column_index" >{{ currentIndex +  i + 1 }}</td>
+        <td class="column_nombre" >{{ person.nombre | uppercase }} </td>
+        <td class="column_direccion" >{{ person.direccion }}</td>
+        <td class="column_correo" >{{ person.correo }} </td>
+        <td class="column_numero" >{{ person.numero }}</td>
         <td>
             <button 
                 class="btn-danger"
