@@ -7,6 +7,6 @@ export interface User  {
     correo:string
     numero:string
     telefono:string
-    fechaCreation:string
+    fechaCreation?:string
     fechaUpdate?:string
 }

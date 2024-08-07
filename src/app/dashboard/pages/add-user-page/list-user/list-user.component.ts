@@ -19,7 +19,7 @@ export class ListUserComponent {
  public userUpdate: EventEmitter<User> = new EventEmitter();
 
  @Output()
- public searchUserId: EventEmitter<string> = new EventEmitter()
+ public searchUserId: EventEmitter<number> = new EventEmitter()
 
  public currentIndex = 0;
  public pageSize = 10;

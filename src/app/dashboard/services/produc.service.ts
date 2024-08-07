@@ -11,10 +11,10 @@ import { enviromentProduct } from './environments/environments.pro';
 export class ProductServicesService  {
 
 
-  private url: string = enviromentProduct.urlGet;
+  private url: string = enviromentProduct.urlGetProd;
   private apiKey: string = enviromentProduct.apiKey;
   private auth:string =enviromentProduct.authe;
-  private baseUrl:string =enviromentProduct.baseUrl;
+  private baseUrl:string =enviromentProduct.baseUrlProd;
 
 
 
