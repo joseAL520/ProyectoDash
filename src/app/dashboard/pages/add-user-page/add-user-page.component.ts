@@ -52,8 +52,8 @@ export class AddUserPageComponent implements OnInit {
   }
 
   //Search User
-  searchUserByID(id:string){
-    if( id.trim() ){
+  searchUserByID(id:number){
+    if( id){
       this.serviceUse.searchUser(id)
         .subscribe( user => { 
            this.userList = Object.values(user)
@@ -62,8 +62,6 @@ export class AddUserPageComponent implements OnInit {
     }else{
        this.getUserList();
     }
-
-    
   }
 
 

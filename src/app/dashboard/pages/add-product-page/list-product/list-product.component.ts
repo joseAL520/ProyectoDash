@@ -51,8 +51,8 @@ export class ListProductComponent {
   }
 
 
-  updateProductById( prodcut:Productos ){
-    this.productUpdate.emit( prodcut );
+  updateProductById( prodcut:Productos){
+    this.productUpdate.emit( prodcut);
   }
 
   searchProduct(){

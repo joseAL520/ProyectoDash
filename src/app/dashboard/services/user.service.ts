@@ -1,15 +1,18 @@
 import { Injectable, OnInit } from '@angular/core';
 import { User } from '../interfaces/user.interfaces';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { catchError, map, Observable, of } from 'rxjs';
+import { enviromentProduct } from './environments/environments.pro';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserServicesService {
 
-  private url: string = 'http://localhost:3000'
-
+  private url: string = enviromentProduct.urlGetUser;
+  private baseUrl:string =enviromentProduct.baseUrlUser;
+  private apiKey: string = enviromentProduct.apiKey;
+  private auth:string =enviromentProduct.authe;
   public userList: User[] = []
   
   
@@ -18,28 +21,48 @@ export class UserServicesService {
   ){}
 
   getuserList(): Observable<User[]>{
-    return this.http.get<User[]>(`${this.url}/Usuario`);
+    const headers = new HttpHeaders({
+      'apikey': this.apiKey,
+      'Authorization': this.auth
+    })
+    return this.http.get<User[]>(this.url,{headers});
   }
   
   addUser( character: User ):Observable<User[]> {
-    
-      return this.http.post<User[]>(`${this.url}/Usuario`,character);
+    const headers = new HttpHeaders({
+      'apikey': this.apiKey,
+      'Authorization': this.auth,
+      'Content-Type':'application/json'
+    })
+      return this.http.post<User[]>(this.baseUrl,character,{headers});
   }
 
   deleteUser( id:string ): Observable<boolean>{
-    return this.http.delete<User>(`${this.url}/Usuario/${id}`).pipe(
+    const headers = new HttpHeaders({
+      'apikey': this.apiKey,
+      'Authorization': this.auth
+    })
+    return this.http.delete<User>(`${this.baseUrl}?id=eq.${id}`,{headers}).pipe(
       map(rep => true ),
       catchError(err => of (false) )
     )
   }
 
   updateUser(newUser: User): Observable<User[]> {
-      return this.http.patch<User[]>(`${this.url}/Usuario/${newUser.id}/`,newUser);
+    const id = newUser.id
+    const headers = new HttpHeaders({
+      'apikey': this.apiKey,
+      'Authorization': this.auth
+    })
+    return this.http.patch<User[]>(`${this.baseUrl}?id=eq.${id}`,newUser,{headers});
   }
 
-  searchUser( idUser:string ):Observable<User[]>{
-    const params = new HttpParams().set('numeroId',idUser);
-      return this.http.get<User[]>(`${this.url}/Usuario/`,{params});
+  searchUser( idUser:number ):Observable<User[]>{
+    const headers = new HttpHeaders({
+      'apikey': this.apiKey,
+      'Authorization': this.auth
+    });
+    return this.http.get<User[]>(`${this.baseUrl}?numeroId=eq.${idUser}`, { headers });
   }
 
 }

@@ -24,7 +24,6 @@ export class FormUserComponent implements OnChanges{
 
   public initalFormValue = {
     id:uuidv4() ,
-    fechaCreacion: Date(),
     fetchaUpdat: ''
   }
 
@@ -36,7 +35,6 @@ export class FormUserComponent implements OnChanges{
     correo:['',[Validators.required,  Validators.email]],
     numero:[,[Validators.required,  Validators.minLength(10)]],
     telefono:[,[Validators.required,  Validators.minLength(6)]],
-    fechaCreation:[this.initalFormValue.fechaCreacion ],
     fechaUpdate: [this.initalFormValue.fetchaUpdat]
   })
 
@@ -78,12 +76,13 @@ export class FormUserComponent implements OnChanges{
   }
 
   resetForm(){
-    this.myForm.reset({
+    this.myForm.reset(
+      {
       ...this.initalFormValue,
       id: uuidv4(),
-      fechaCreation: Date(),
       fetchaUpdat: ''
-    })
+    }
+    )
   }
 
   onUpdate(): void {
@@ -101,7 +100,6 @@ export class FormUserComponent implements OnChanges{
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['userByUp'] && changes['userByUp'].currentValue) {
       this.myForm.patchValue(changes['userByUp'].currentValue);
-      
       this.btnActiveEdit = true;
       this.btnAddUsr = true;
     }

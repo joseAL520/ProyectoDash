@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Productos } from '../interfaces/produc.interfaces';
 import { catchError, map, Observable, of } from 'rxjs';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { enviromentProduct } from './environments/environments.pro';
  
 
 @Injectable({
@@ -10,23 +11,42 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 export class ProductServicesService  {
 
 
-  private url: string = 'http://localhost:3000'
+  private url: string = enviromentProduct.urlGetProd;
+  private apiKey: string = enviromentProduct.apiKey;
+  private auth:string =enviromentProduct.authe;
+  private baseUrl:string =enviromentProduct.baseUrlProd;
+
+
 
   constructor(
     private http: HttpClient
   ){}
 
   getProductList(): Observable<Productos[]> {
-    return this.http.get<Productos[]>(`${this.url}/productos`);
+    const headers = new HttpHeaders({
+      'apikey': this.apiKey,
+      'Authorization': this.auth
+    })
+    return this.http.get<Productos[]>(this.url, {headers});
   
   }
 
   addProduct( character:  Productos ): Observable<Productos> {
-    return this.http.post<Productos>(`${this.url}/productos/`,character)
+    const headers = new HttpHeaders({
+      'apikey': this.apiKey,
+      'Authorization': this.auth,
+      'Content-Type':'application/json'
+    })
+    return this.http.post<Productos>(this.baseUrl,character,{headers})
   }
 
   deleteProduct( id:string ): Observable<boolean> {
-    return this.http.delete<Productos>(`${this.url}/productos/${id}`)
+    const headers = new HttpHeaders({
+      'apikey': this.apiKey,
+      'Authorization': this.auth
+    })
+
+    return this.http.delete<Productos>(`${this.baseUrl}?id=eq.${id}`,{headers})
      .pipe(
         map( resp => true),
         catchError(err => of (false)),
@@ -34,14 +54,22 @@ export class ProductServicesService  {
   }
 
   updateProduct(newProduct: Productos): Observable<Productos[]> {
-     return this.http.patch<Productos[]>(`${this.url}/productos/${newProduct.id}/`,newProduct)
+    const id = newProduct.id
+    const headers = new HttpHeaders({
+      'apikey': this.apiKey,
+      'Authorization': this.auth
+    })
+     return this.http.patch<Productos[]>(`${this.baseUrl}?id=eq.${id}`,newProduct,{headers})
   }
 
   searchProduct( nameProduct:string ): Observable<Productos[]> {
+    const headers = new HttpHeaders({
+      'apikey': this.apiKey,
+      'Authorization': this.auth
+    })
 
-    const params = new HttpParams().set('nombre',nameProduct);
-    return this.http.get<Productos[]>(`${this.url}/productos`,{params});
-    
+    const filter = encodeURIComponent(`%${nameProduct}%`);
+    return this.http.get<Productos[]>(`${this.baseUrl}?nombre=ilike.${filter}`,{headers});
   }
 
 }
