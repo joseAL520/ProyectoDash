@@ -15,6 +15,9 @@ export class AddProductPageComponent implements OnInit {
   public productUpdate!: Productos;
   public productList: Productos[] =[]
 
+
+  
+  
   
   constructor(
     private serviceProduct: ProductServicesService
@@ -35,10 +38,8 @@ export class AddProductPageComponent implements OnInit {
   }
 
   aggProduct(character: Productos){
-    this.serviceProduct.addProduct(character).subscribe( (newProduct) => {
-      if(newProduct){
-        this.getproducList()
-      }
+    this.serviceProduct.addProduct(character).subscribe( () => {
+      this.getproducList();
     });
   }
 

@@ -19,6 +19,7 @@
 .container-table{
     background-color: #ffffff;
     border-radius: 5px;
+    width: 80%;
 } 
 
 .container-table span{

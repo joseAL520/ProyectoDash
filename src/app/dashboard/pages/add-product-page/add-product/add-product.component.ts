@@ -26,8 +26,7 @@ export class AddProductComponent implements OnChanges{
 
   public initalFormValue = {
     id:uuidv4() ,
-    fechaCreacion: Date(),
-    fetchaUpdat: ''
+    fechaUpdate:''
   }
   
   public myForm:FormGroup = this.fb.group({
@@ -37,8 +36,7 @@ export class AddProductComponent implements OnChanges{
     provedor:['',[Validators.required, Validators.minLength(3)]],
     categoria:['',[Validators.required ]],
     cantidad:[ ,[Validators.required, Validators.min(0)]],
-    fechaCreation:[ this.initalFormValue.fechaCreacion ],
-    fechaUpdate: [this.initalFormValue.fetchaUpdat],
+    fechaUpdate: [this.initalFormValue.fechaUpdate],
     precio:[,[Validators.required]]
   })
 
@@ -85,23 +83,22 @@ export class AddProductComponent implements OnChanges{
       ...this.initalFormValue,
       id: uuidv4(),
       fechaCreation: Date(),
-      fetchaUpdat: ''
+      fechaUpdate: ''
     })
   }
 
   onUpdate(): void {
     if (this.myForm.valid && this.productByUp) {
       this.myForm.patchValue({
-        fechaUpdate: Date()
+        fechaUpdate: Date().toString()
       });
-      this.updateUserEvent.emit(this.myForm.value);
+      this.updateUserEvent.emit(this.myForm.value)
       this.reset();
       this.btnActiveEdit = false;
       this.btnAdd = false;
       return
     }
   }
-
 
 
   ngOnChanges(changes: SimpleChanges): void {
